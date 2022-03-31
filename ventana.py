@@ -31,7 +31,7 @@ d2.place(x=10,y=25,width=375,height=30)
 d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
-'''
+
 btn0 = Button(app, text="C",height=5,width=10).place(x=25,y=25)
 btn1 = Button(app, text="",height=5,width=10).place(x=110,y=25)
 btn2 = Button(app, text="",height=5,width=10).place(x=195,y=25)
@@ -56,5 +56,5 @@ btn15 = Button(app, text="+",height=5,width=10).place(x=280,y=310)
 Button(app, text="0",height=5,width=10,command=lambda:numeros(0)).place(x=25,y=405,width=165)
 Button(app, text=".",height=5,width=10).place(x=195,y=405)
 Button(app, text="=",height=5,width=10).place(x=280,y=405)
-'''
+
 app.mainloop()
