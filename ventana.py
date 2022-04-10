@@ -1,16 +1,16 @@
 from cgitb import text
+from cmath import e
 from ctypes import sizeof
 from msilib.schema import TextStyle
 from numbers import Number
-from struct import pack
-from subprocess import call
 from tkinter import *
 import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
-from turtle import left
+import tkinter
 
-import graficador
+
+
 
 
 
@@ -21,11 +21,12 @@ def numeros(n):
     global i 
     d2.insert(i,n)
     if (n==0):
-        display.create_oval(5,5,10,10)
+        display.create_oval(5,5,10,25)
         display.addtag_all
     elif (n==1):
-        display.create_line(10,10,10,20)
-        display.addtag_all
+        display.create_line(10,10,10,30)
+        display.addtag_below
+        
     elif (n==2):
         x1=30
         x2=40
