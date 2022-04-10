@@ -6,7 +6,7 @@ from tkinter import *
 import tkinter as tk
 from tkinter import font
 
-
+#a
 i=0
 
 def numeros(n):
