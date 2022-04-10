@@ -12,7 +12,7 @@ i=0
 def numeros(n):
     global i 
     display.insert(i,n)
-    i+=1
+    i+=1q
 
 ##configuracion de la ventana 
 app = Tk()
