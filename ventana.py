@@ -1,17 +1,33 @@
 from cgitb import text
 from ctypes import sizeof
 from msilib.schema import TextStyle
+from numbers import Number
 from struct import pack
+from subprocess import call
 from tkinter import *
 import tkinter as tk
 from tkinter import font
+from tkinter import Canvas
+from turtle import left
+
+import graficador
+
 
 
 i=0
+operacion= []
 
 def numeros(n):
     global i 
-    display.insert(i,n)
+    d2.insert(i,n)
+    if (n=="0"):
+        display.create_oval(0,5,5,10)
+        display.addtag_all
+    elif (n=="1"):
+        display.create_line(10,10,20,20)
+        display.addtag_all
+    
+    
     i+=1
 
 ##configuracion de la ventana 
@@ -21,13 +37,13 @@ app.geometry("800x600") ##dimensiones de la ventanan principal ANCHOXALTO
 app.configure(background="light blue")
 
 #entrada de la calculadora
-display = Entry(app)
+display = Canvas(app)
 display.place(x=400,y=25,width=375,height=550)
-display.config(font=('Bradley hand ITC',20))
+
 
 #entrada de teclado
 d2 = Entry(app)
-d2.place(x=10,y=25,width=375,height=30)
+d2.place(x=10,y=525,width=375,height=30)
 d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
@@ -57,4 +73,8 @@ Button(app, text="0",height=5,width=10,command=lambda:numeros(0)).place(x=25,y=4
 Button(app, text=".",height=5,width=10).place(x=195,y=405)
 Button(app, text="=",height=5,width=10).place(x=280,y=405)
 
+
+
 app.mainloop()
+
+
