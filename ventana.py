@@ -20,13 +20,24 @@ operacion= []
 def numeros(n):
     global i 
     d2.insert(i,n)
-    if (n=="0"):
-        display.create_oval(0,5,5,10)
+    if (n==0):
+        display.create_oval(5,5,10,10)
         display.addtag_all
-    elif (n=="1"):
-        display.create_line(10,10,20,20)
+    elif (n==1):
+        display.create_line(10,10,10,20)
         display.addtag_all
-    
+    elif (n==2):
+        x1=30
+        x2=40
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2,y1)
+        display.create_line(x2,y1,x2,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x1,y2,x1,y3)
+        display.create_line(x1,y3,x2,y3)
     
     i+=1
 
