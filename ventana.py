@@ -11,7 +11,7 @@ i=0
 
 def numeros(n):
     global i 
-    display.insert(i,n)
+    d2.insert(i,n)
     i+=1
 
 ##configuracion de la ventana 
@@ -27,7 +27,7 @@ display.config(font=('Bradley hand ITC',20))
 
 #entrada de teclado
 d2 = Entry(app)
-d2.place(x=10,y=25,width=375,height=30)
+d2.place(x=10,y=525,width=375,height=30)
 d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
