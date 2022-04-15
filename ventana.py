@@ -7,11 +7,14 @@ from tkinter import *
 import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
+<<<<<<< HEAD
 import tkinter
 
 
 
 
+=======
+>>>>>>> kevgaa
 
 
 i=0
@@ -20,6 +23,10 @@ operacion= []
 def numeros(n):
     global i 
     d2.insert(i,n)
+<<<<<<< HEAD
+=======
+
+>>>>>>> kevgaa
     if (n==0):
         display.create_oval(5,5,10,25)
         display.addtag_all
@@ -33,6 +40,7 @@ def numeros(n):
         y1=10
         y2=20
         y3=30
+<<<<<<< HEAD
 
         display.create_line(x1,y1,x2,y1)
         display.create_line(x2,y1,x2,y2)
@@ -41,7 +49,16 @@ def numeros(n):
         display.create_line(x1,y3,x2,y3)
     
     i+=1
+=======
+>>>>>>> kevgaa
 
+        display.create_line(x1,y1,x2,y1)
+        display.create_line(x2,y1,x2,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x1,y2,x1,y3)
+        display.create_line(x1,y3,x2,y3)
+    i+=1
+    
 ##configuracion de la ventana 
 app = Tk()
 app.title("Graficador de expresiones matematicas")
@@ -51,7 +68,10 @@ app.configure(background="light blue")
 #entrada de la calculadora
 display = Canvas(app)
 display.place(x=400,y=25,width=375,height=550)
+<<<<<<< HEAD
 
+=======
+>>>>>>> kevgaa
 
 #entrada de teclado
 d2 = Entry(app)
