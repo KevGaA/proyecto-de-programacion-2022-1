@@ -5,15 +5,36 @@ from struct import pack
 from tkinter import *
 import tkinter as tk
 from tkinter import font
+from tkinter import Canvas
 
 
 i=0
 
 def numeros(n):
     global i 
-    display.insert(i,n)
-    i+=1
+    d2.insert(i,n)
 
+    if (n==0):
+        display.create_oval(5,5,10,25)
+        display.addtag_all
+    elif (n==1):
+        display.create_line(10,10,10,30)
+        display.addtag_below
+        
+    elif (n==2):
+        x1=30
+        x2=40
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2,y1)
+        display.create_line(x2,y1,x2,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x1,y2,x1,y3)
+        display.create_line(x1,y3,x2,y3)
+    i+=1
+    
 ##configuracion de la ventana 
 app = Tk()
 app.title("Graficador de expresiones matematicas")
@@ -21,13 +42,12 @@ app.geometry("800x600") ##dimensiones de la ventanan principal ANCHOXALTO
 app.configure(background="light blue")
 
 #entrada de la calculadora
-display = Entry(app)
+display = Canvas(app)
 display.place(x=400,y=25,width=375,height=550)
-display.config(font=('Bradley hand ITC',20))
 
 #entrada de teclado
 d2 = Entry(app)
-d2.place(x=10,y=25,width=375,height=30)
+d2.place(x=10,y=525,width=375,height=30)
 d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
