@@ -9,14 +9,22 @@ from tkinter import Canvas
 
 
 i=0
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 def numeros(n):
     global i 
     d2.insert(i,n)
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     if (n==0):
         display.create_oval(5,5,10,25)
         display.addtag_all
+
     elif (n==1):
         display.create_line(10,10,10,30)
         display.addtag_below
@@ -33,6 +41,10 @@ def numeros(n):
         display.create_line(x2,y2,x1,y2)
         display.create_line(x1,y2,x1,y3)
         display.create_line(x1,y3,x2,y3)
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
     i+=1
     
 ##configuracion de la ventana 
