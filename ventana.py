@@ -15,7 +15,7 @@ def numeros(n):
     d2.insert(i,n)
 
     if (n==0):
-        display.create_oval(5,5,10,25)
+        display.create_oval(20,10,10,30)
         display.addtag_all
     elif (n==1):
         display.create_line(10,10,10,30)
@@ -34,6 +34,7 @@ def numeros(n):
         display.create_line(x1,y2,x1,y3)
         display.create_line(x1,y3,x2,y3)
     
+    #operadores 
     elif (n=="/"):
         display.create_line(20,10,10,30)
         display.addtag_below
