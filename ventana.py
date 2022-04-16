@@ -38,6 +38,15 @@ def numeros(n):
         display.create_line(20,10,10,30)
         display.addtag_below
     
+    elif (n=="-"):
+        display.create_line(20,20,10,20)
+        display.addtag_below
+
+    elif (n=="+"):
+        display.create_line(30,20,10,20)
+        display.create_line(20,10,20,30)
+        display.addtag_below
+    
     elif (n=="*"):
         display.create_line(20,10,10,30)
         display.create_line(10,10,20,30)
