@@ -20,7 +20,7 @@ def numeros(n):
     elif (n==1):
         display.create_line(10,10,10,30)
         display.addtag_below
-        
+
     elif (n==2):
         x1=30
         x2=40
@@ -33,6 +33,21 @@ def numeros(n):
         display.create_line(x2,y2,x1,y2)
         display.create_line(x1,y2,x1,y3)
         display.create_line(x1,y3,x2,y3)
+<<<<<<< HEAD
+=======
+    
+    elif (n=="/"):
+        display.create_line(20,10,10,30)
+        display.addtag_below
+    
+    elif (n=="*"):
+        display.create_line(20,10,10,30)
+        display.create_line(10,10,20,30)
+        display.create_line(10,20,20,20)
+        display.create_line(15,10,15,30)
+        display.addtag_below
+        
+>>>>>>> pruebas
     i+=1
     
 ##configuracion de la ventana 
