@@ -8,7 +8,7 @@ import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
 
-
+#aa
 i=0
 
 def borrar_todo(n):
@@ -18,6 +18,7 @@ def borrar_todo(n):
 def numeros(n):
     global i 
     d2.insert(i,n)
+    x=i*10
 
     if (n==0):
         display.create_oval(20,10,10,30)
@@ -64,7 +65,74 @@ def numeros(n):
         display.create_line(x2,y2,x1,y2)
         display.create_line(30,10,30,20)
         display.create_line(40,20,40,30)
-        
+
+    elif (n==5):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2+2,y1) 
+        display.create_line(x1,y1,x1,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x2+1,y2,x2+1,y3)
+        display.create_line(x1,y3,x2+2,y3)
+
+    elif (n==6):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2+2,y1) 
+        display.create_line(x1,y1,x1,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x2+1,y2,x2+1,y3)
+        display.create_line(x1,y3,x2+2,y3)
+        display.create_line(x1,y2,x1,y3)
+
+    elif(n==7):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+        display.create_line(x1,y1,x2+3,y1)
+        display.create_line(x2+3,y1,x1,y3)
+
+    elif (n==8):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2+2,y1) 
+        display.create_line(x1,y1,x1,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x2+1,y1,x2+1,y2)
+        display.create_line(x2+1,y2,x2+1,y3)
+        display.create_line(x1,y3,x2+2,y3)
+        display.create_line(x1,y2,x1,y3)
+
+    elif(n==9):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2+2,y1) 
+        display.create_line(x1,y1,x1,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x2+1,y1,x2+1,y2)
+        display.create_line(x2+1,y2,x2+1,y3)
+        display.create_line(x1,y3,x2+2,y3)
+
+
+
     
 
     #operadores 
