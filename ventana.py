@@ -109,7 +109,7 @@ d2.config(font=('ARIAL',10))
 
 btn0 = Button(app, text="C",height=5,width=10,command=lambda:borrar_todo("x")).place(x=25,y=25)
 btn1 = Button(app, text="",height=5,width=10).place(x=110,y=25)
-btn2 = Button(app, text="",height=5,width=10).place(x=195,y=25)
+btn2 = Button(app, text="del",height=5,width=10,command=lambda:borrar_todo("x")).place(x=195,y=25)
 btn3 = Button(app, text="/",height=5,width=10,command=lambda:numeros("/")).place(x=280,y=25)
 
 btn4 = Button(app, text="7",height=5,width=10,command=lambda:numeros(7)).place(x=25,y=120)
