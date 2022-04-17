@@ -8,22 +8,22 @@ from tkinter import font
 from tkinter import Canvas
 
 
-i=0
+i=1
 
 def numeros(n):
     global i 
     d2.insert(i,n)
-
+    x=i*10
     if (n==0):
         display.create_oval(20,10,10,30)
         display.addtag_all
     elif (n==1):
         display.create_line(10,10,10,30)
         display.addtag_below
-
+    #numero 2
     elif (n==2):
-        x1=30
-        x2=40
+        x1=x
+        x2=x+10
         y1=10
         y2=20
         y3=30
@@ -36,8 +36,8 @@ def numeros(n):
 
     
     elif (n==3):
-        x1=30
-        x2=40
+        x1=x
+        x2=x+10
         y1=10
         y2=20
         y3=30
@@ -45,8 +45,8 @@ def numeros(n):
         display.create_line(x1,y1,x2,y1)
         display.create_line(x2,y1,x2,y2)
         display.create_line(x2,y2,x1,y2)
-        display.create_line(40,20,40,30)
-        display.create_line(40,30,30,30)
+        display.create_line(x2,y2,x2,y3)
+        display.create_line(x2,y3,x1,y3)
     
     elif (n==4):
         x1=30
