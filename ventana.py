@@ -125,7 +125,7 @@ def numeros(n):
         display.create_line(x2+1,y1,x2+1,y2)
         display.create_line(x2+1,y2,x2+1,y3)
         display.create_line(x1,y3,x2+2,y3) 
-        #code
+        #codetest
 
 
 
