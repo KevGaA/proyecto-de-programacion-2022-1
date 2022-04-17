@@ -48,6 +48,20 @@ def numeros(n):
         display.create_line(40,20,40,30)
         display.create_line(40,30,30,30)
     
+    elif (n==4):
+        x1=30
+        x2=40
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x2,y1,x2,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(30,10,30,20)
+        display.create_line(40,20,40,30)
+        
+    
+
     #operadores 
     elif (n=="/"):
         display.create_line(20,10,10,30)
