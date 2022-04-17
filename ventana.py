@@ -10,11 +10,6 @@ from tkinter import Canvas
 
 i=0
 
-
-def borrar_todo(n):
-    if (n=="x"):
-        display.delete("all")
-
 def numeros(n):
     global i 
     d2.insert(i,n)
@@ -65,6 +60,8 @@ def numeros(n):
         display.create_line(30,10,30,20)
         display.create_line(40,20,40,30)
         
+    
+
     #operadores 
     elif (n=="/"):
         display.create_line(20,10,10,30)
@@ -105,7 +102,7 @@ d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
 
-btn0 = Button(app, text="C",height=5,width=10,command=lambda:borrar_todo("x")).place(x=25,y=25)
+btn0 = Button(app, text="C",height=5,width=10).place(x=25,y=25)
 btn1 = Button(app, text="",height=5,width=10).place(x=110,y=25)
 btn2 = Button(app, text="",height=5,width=10).place(x=195,y=25)
 btn3 = Button(app, text="/",height=5,width=10,command=lambda:numeros("/")).place(x=280,y=25)
