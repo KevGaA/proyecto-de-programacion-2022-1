@@ -7,7 +7,7 @@ import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
 
-#a
+#aa
 i=0
 
 def numeros(n):
