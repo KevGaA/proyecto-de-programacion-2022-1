@@ -1,3 +1,4 @@
+from ast import Delete
 from cgitb import text
 from ctypes import sizeof
 from msilib.schema import TextStyle
@@ -9,6 +10,10 @@ from tkinter import Canvas
 
 
 i=0
+
+def borrar_todo(n):
+    if (n=="x"):
+        display.delete("all")
 
 def numeros(n):
     global i 
@@ -102,7 +107,7 @@ d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
 
-btn0 = Button(app, text="C",height=5,width=10).place(x=25,y=25)
+btn0 = Button(app, text="C",height=5,width=10,command=lambda:borrar_todo("x")).place(x=25,y=25)
 btn1 = Button(app, text="",height=5,width=10).place(x=110,y=25)
 btn2 = Button(app, text="",height=5,width=10).place(x=195,y=25)
 btn3 = Button(app, text="/",height=5,width=10,command=lambda:numeros("/")).place(x=280,y=25)
