@@ -88,6 +88,16 @@ def numeros(n):
         display.create_line(x1,y3,x2+2,y3)
         display.create_line(x1,y2,x1,y3)
 
+    elif(n==7):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+        display.create_line(x1,y1,x2+3,y1)
+        display.create_line(x2+3,y1,x1,y3)
+
+
     
 
     #operadores 
