@@ -11,12 +11,14 @@ from tkinter import Canvas
 #aa
 i=0
 
+#funcion que borra el ultimo numero
+
 #funcion que borra todo 
 def borrar_todo(n):
     if (n=="x"):
         display.delete("all")
 
-##hacer ciclo para volver al indice
+##hacer ciclo para volver al indice 
 def numeros(n):
     global i 
     d2.insert(i,n)
@@ -140,10 +142,6 @@ def numeros(n):
         display.create_line(x2+1,y2,x2+1,y3)
         display.create_line(x1,y3,x2+2,y3)
 
-
-
-    
-
     #operadores 
     elif (n=="/"):
         
@@ -204,7 +202,6 @@ d2.place(x=10,y=525,width=375,height=30)
 d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
-
 btn0 = Button(app, text="C",height=5,width=10,command=lambda:borrar_todo("x")).place(x=25,y=25)
 btn1 = Button(app, text="",height=5,width=10).place(x=110,y=25)
 btn2 = Button(app, text="del",height=5,width=10,command=lambda:borrar_todo("x")).place(x=195,y=25)
