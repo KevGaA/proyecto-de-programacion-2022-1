@@ -16,6 +16,7 @@ def borrar_todo(n):
     if (n=="x"):
         display.delete("all")
 
+##hacer ciclo para volver al indice
 def numeros(n):
     global i 
     d2.insert(i,n)
