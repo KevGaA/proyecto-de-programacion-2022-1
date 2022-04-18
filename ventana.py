@@ -11,6 +11,7 @@ from tkinter import Canvas
 #aa
 i=0
 
+#funcion que borra todo 
 def borrar_todo(n):
     if (n=="x"):
         display.delete("all")
