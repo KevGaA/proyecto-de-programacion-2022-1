@@ -225,7 +225,7 @@ btn15 = Button(app, text="+",height=5,width=10,command=lambda:numeros("+")).plac
 
 ##BOTONES OPERADORES    
 Button(app, text="0",height=5,width=10,command=lambda:numeros(0)).place(x=25,y=405,width=165)
-Button(app, text="*",height=5,width=10,command=lambda:numeros("*")).place(x=195,y=405)
+Button(app, text=".",height=5,width=10,command=lambda:numeros(".")).place(x=195,y=405)
 Button(app, text="=",height=5,width=10).place(x=280,y=405)
 
 app.mainloop()
