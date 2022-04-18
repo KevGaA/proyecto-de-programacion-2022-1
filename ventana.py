@@ -7,9 +7,9 @@ import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
 
-#aa
-i=0
 
+i=0
+#numeros
 def numeros(n):
     global i 
     d2.insert(i,n)
@@ -124,10 +124,7 @@ def numeros(n):
         display.create_line(x2,y2,x1,y2)
         display.create_line(x2+1,y1,x2+1,y2)
         display.create_line(x2+1,y2,x2+1,y3)
-        display.create_line(x1,y3,x2+2,y3) 
-        #codetest
-
-
+        display.create_line(x1,y3,x2+2,y3)
 
     
 
