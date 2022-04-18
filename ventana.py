@@ -1,3 +1,4 @@
+from ast import Delete
 from cgitb import text
 from ctypes import sizeof
 from msilib.schema import TextStyle
@@ -7,23 +8,35 @@ import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
 
-
+#aa
 i=0
+
+def borrar_todo(n):
+    if (n=="x"):
+        display.delete("all")
 
 def numeros(n):
     global i 
     d2.insert(i,n)
-
+    x=i*10
     if (n==0):
-        display.create_oval(20,10,10,30)
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=30
+        display.create_oval(x1,y1,x2,y2)
         display.addtag_all
     elif (n==1):
-        display.create_line(10,10,10,30)
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=30
+        display.create_line(x1,y1,x1,y2)
         display.addtag_below
-
+    #numero 2
     elif (n==2):
-        x1=30
-        x2=40
+        x1=x+5
+        x2=x+10
         y1=10
         y2=20
         y3=30
@@ -36,8 +49,8 @@ def numeros(n):
 
     
     elif (n==3):
-        x1=30
-        x2=40
+        x1=x+5
+        x2=x+10
         y1=10
         y2=20
         y3=30
@@ -45,42 +58,130 @@ def numeros(n):
         display.create_line(x1,y1,x2,y1)
         display.create_line(x2,y1,x2,y2)
         display.create_line(x2,y2,x1,y2)
-        display.create_line(40,20,40,30)
-        display.create_line(40,30,30,30)
+        display.create_line(x2,y2,x2,y3)
+        display.create_line(x2,y3,x1,y3)
     
     elif (n==4):
-        x1=30
-        x2=40
+        x1=x+5
+        x2=x+10
         y1=10
         y2=20
         y3=30
 
+        display.create_line(x2,y1,x2,y3)
+        display.create_line(x1,y2,x2,y2)
         display.create_line(x2,y1,x2,y2)
+        display.create_line(x1,y2,x1,y1)
+
+    elif (n==5):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2+2,y1) 
+        display.create_line(x1,y1,x1,y2)
         display.create_line(x2,y2,x1,y2)
-        display.create_line(30,10,30,20)
-        display.create_line(40,20,40,30)
-        
+        display.create_line(x2+1,y2,x2+1,y3)
+        display.create_line(x1,y3,x2+2,y3)
+
+    elif (n==6):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2+2,y1) 
+        display.create_line(x1,y1,x1,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x2+1,y2,x2+1,y3)
+        display.create_line(x1,y3,x2+2,y3)
+        display.create_line(x1,y2,x1,y3)
+
+    elif(n==7):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+        display.create_line(x1,y1,x2+3,y1)
+        display.create_line(x2+3,y1,x1,y3)
+
+    elif (n==8):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2+2,y1) 
+        display.create_line(x1,y1,x1,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x2+1,y1,x2+1,y2)
+        display.create_line(x2+1,y2,x2+1,y3)
+        display.create_line(x1,y3,x2+2,y3)
+        display.create_line(x1,y2,x1,y3)
+
+    elif(n==9):
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+
+        display.create_line(x1,y1,x2+2,y1) 
+        display.create_line(x1,y1,x1,y2)
+        display.create_line(x2,y2,x1,y2)
+        display.create_line(x2+1,y1,x2+1,y2)
+        display.create_line(x2+1,y2,x2+1,y3)
+        display.create_line(x1,y3,x2+2,y3)
+
+
+
     
 
     #operadores 
     elif (n=="/"):
-        display.create_line(20,10,10,30)
+        
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+        display.create_line(x2-5,y3+5,x1-10,y3+5)
         display.addtag_below
     
     elif (n=="-"):
-        display.create_line(20,20,10,20)
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+        display.create_line(x1,y2,x2,y2)
         display.addtag_below
 
     elif (n=="+"):
-        display.create_line(30,20,10,20)
-        display.create_line(20,10,20,30)
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+        display.create_line(x1,y2,x2,y2)
+        display.create_line(x2-3,y1,x2-3,y3)
         display.addtag_below
     
     elif (n=="*"):
-        display.create_line(20,10,10,30)
-        display.create_line(10,10,20,30)
-        display.create_line(10,20,20,20)
-        display.create_line(15,10,15,30)
+        x1=x+5
+        x2=x+10
+        y1=10
+        y2=20
+        y3=30
+        display.create_line(x2,y1,x1,y3)
+        display.create_line(x1,y1,x2,y3)
+        display.create_line(x1,y2,x2,y2)
+        
         display.addtag_below
         
     i+=1
@@ -102,7 +203,7 @@ d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
 
-btn0 = Button(app, text="C",height=5,width=10).place(x=25,y=25)
+btn0 = Button(app, text="C",height=5,width=10,command=lambda:borrar_todo("x")).place(x=25,y=25)
 btn1 = Button(app, text="",height=5,width=10).place(x=110,y=25)
 btn2 = Button(app, text="",height=5,width=10).place(x=195,y=25)
 btn3 = Button(app, text="/",height=5,width=10,command=lambda:numeros("/")).place(x=280,y=25)
