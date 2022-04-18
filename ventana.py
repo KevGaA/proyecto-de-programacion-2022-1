@@ -183,7 +183,7 @@ def numeros(n):
         display.create_line(x1,y2,x2,y2)
         
         display.addtag_below
-        
+    '''i'''    
     i+=1
     
 ##configuracion de la ventana 
