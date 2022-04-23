@@ -10,36 +10,39 @@ from tkinter import Canvas
 
 #aa
 i=0
-
+c=0
 def borrar_todo(n):
     if (n=="x"):
         display.delete("all")
 
 def numeros(n):
     global i 
+    global c
     d2.insert(i,n)
     x=i*10
+    x1=x+5
+    x2=x+10
+    y1=10
+    y2=20
+    y3=30
+    
+    if(c=="/"):
+        i-=1
+        x1=x-15
+        x2=x-10
+        y1=50
+        y2=60
+        y3=70
     if (n==0):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=30
-        display.create_oval(x1,y1,x2,y2)
+        
+        display.create_oval(x1,y1,x2,y3)
         display.addtag_all
     elif (n==1):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=30
-        display.create_line(x1,y1,x1,y2)
+
+        display.create_line(x1,y1,x1,y3)
         display.addtag_below
     #numero 2
     elif (n==2):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
 
         display.create_line(x1,y1,x2,y1)
         display.create_line(x2,y1,x2,y2)
@@ -49,11 +52,7 @@ def numeros(n):
 
     
     elif (n==3):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
+       
 
         display.create_line(x1,y1,x2,y1)
         display.create_line(x2,y1,x2,y2)
@@ -62,11 +61,7 @@ def numeros(n):
         display.create_line(x2,y3,x1,y3)
     
     elif (n==4):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
+       
 
         display.create_line(x2,y1,x2,y3)
         display.create_line(x1,y2,x2,y2)
@@ -74,11 +69,7 @@ def numeros(n):
         display.create_line(x1,y2,x1,y1)
 
     elif (n==5):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
+        
 
         display.create_line(x1,y1,x2+2,y1) 
         display.create_line(x1,y1,x1,y2)
@@ -87,11 +78,7 @@ def numeros(n):
         display.create_line(x1,y3,x2+2,y3)
 
     elif (n==6):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
+        
 
         display.create_line(x1,y1,x2+2,y1) 
         display.create_line(x1,y1,x1,y2)
@@ -101,20 +88,12 @@ def numeros(n):
         display.create_line(x1,y2,x1,y3)
 
     elif(n==7):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
+       
         display.create_line(x1,y1,x2+3,y1)
         display.create_line(x2+3,y1,x1,y3)
 
     elif (n==8):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
+       
 
         display.create_line(x1,y1,x2+2,y1) 
         display.create_line(x1,y1,x1,y2)
@@ -125,11 +104,7 @@ def numeros(n):
         display.create_line(x1,y2,x1,y3)
 
     elif(n==9):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
+        
 
         display.create_line(x1,y1,x2+2,y1) 
         display.create_line(x1,y1,x1,y2)
@@ -183,7 +158,7 @@ def numeros(n):
         display.create_line(x1,y2,x2,y2)
         
         display.addtag_below
-    '''i'''    
+    c=n    
     i+=1
     
 ##configuracion de la ventana 
