@@ -150,7 +150,7 @@ def numeros(n):
     elif (n=="x"):
         i=0
         display.delete("all")
-    
+        d2.delete(0, END)
         
     c=n    
     i+=1
