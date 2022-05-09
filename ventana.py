@@ -4,16 +4,19 @@ from tkinter import font
 from tkinter import Canvas
 from turtle import color
 import random
+import os 
 
 #aa
 i=0
 c=0
 
-colores = ["black","red","green","blue","light blue"]
+##colores
+colores = ["red","green","blue","light blue"]
 color = random.choice(colores)
 
 
 def numeros(n): 
+    global color 
     global i
     global c
     d2.insert(i,n)
@@ -43,74 +46,74 @@ def numeros(n):
     #numero 2
     elif (n==2):
 
-        display.create_line(x1,y1,x2,y1,fill='green')
-        display.create_line(x2,y1,x2,y2,fill='green')
-        display.create_line(x2,y2,x1,y2,fill='green')
-        display.create_line(x1,y2,x1,y3,fill='green')
-        display.create_line(x1,y3,x2,y3,fill='green')
+        display.create_line(x1,y1,x2,y1,fill=color)
+        display.create_line(x2,y1,x2,y2,fill=color)
+        display.create_line(x2,y2,x1,y2,fill=color)
+        display.create_line(x1,y2,x1,y3,fill=color)
+        display.create_line(x1,y3,x2,y3,fill=color)
 
     
     elif (n==3):
        
 
-        display.create_line(x1,y1,x2,y1,fill='green')
-        display.create_line(x2,y1,x2,y2,fill='green')
-        display.create_line(x2,y2,x1,y2,fill='green')
-        display.create_line(x2,y2,x2,y3,fill='green')
-        display.create_line(x2,y3,x1,y3,fill='green')
+        display.create_line(x1,y1,x2,y1,fill=color)
+        display.create_line(x2,y1,x2,y2,fill=color)
+        display.create_line(x2,y2,x1,y2,fill=color)
+        display.create_line(x2,y2,x2,y3,fill=color)
+        display.create_line(x2,y3,x1,y3,fill=color)
     
     elif (n==4):
        
 
-        display.create_line(x2,y1,x2,y3,fill='green')
-        display.create_line(x1,y2,x2,y2,fill='green')
-        display.create_line(x2,y1,x2,y2,fill='green')
-        display.create_line(x1,y2,x1,y1,fill='green')
+        display.create_line(x2,y1,x2,y3,fill=color)
+        display.create_line(x1,y2,x2,y2,fill=color)
+        display.create_line(x2,y1,x2,y2,fill=color)
+        display.create_line(x1,y2,x1,y1,fill=color)
 
     elif (n==5):
         
 
-        display.create_line(x1,y1,x2+2,y1,fill='green') 
-        display.create_line(x1,y1,x1,y2,fill='green')
-        display.create_line(x2,y2,x1,y2,fill='green')
-        display.create_line(x2+1,y2,x2+1,y3,fill='green')
-        display.create_line(x1,y3,x2+2,y3,fill='green')
+        display.create_line(x1,y1,x2+2,y1,fill=color) 
+        display.create_line(x1,y1,x1,y2,fill=color)
+        display.create_line(x2,y2,x1,y2,fill=color)
+        display.create_line(x2+1,y2,x2+1,y3,fill=color)
+        display.create_line(x1,y3,x2+2,y3,fill=color)
 
     elif (n==6):
         
 
-        display.create_line(x1,y1,x2+2,y1,fill='green') 
-        display.create_line(x1,y1,x1,y2,fill='green')
-        display.create_line(x2,y2,x1,y2,fill='green')
-        display.create_line(x2+1,y2,x2+1,y3,fill='green')
-        display.create_line(x1,y3,x2+2,y3,fill='green')
-        display.create_line(x1,y2,x1,y3,fill='green')
+        display.create_line(x1,y1,x2+2,y1,fill=color) 
+        display.create_line(x1,y1,x1,y2,fill=color)
+        display.create_line(x2,y2,x1,y2,fill=color)
+        display.create_line(x2+1,y2,x2+1,y3,fill=color)
+        display.create_line(x1,y3,x2+2,y3,fill=color)
+        display.create_line(x1,y2,x1,y3,fill=color)
 
     elif(n==7):
        
-        display.create_line(x1,y1,x2+3,y1,fill='green')
-        display.create_line(x2+3,y1,x1,y3,fill='green')
+        display.create_line(x1,y1,x2+3,y1,fill=color)
+        display.create_line(x2+3,y1,x1,y3,fill=color)
 
     elif (n==8):
        
 
-        display.create_line(x1,y1,x2+2,y1,fill='green') 
-        display.create_line(x1,y1,x1,y2,fill='green')
-        display.create_line(x2,y2,x1,y2,fill='green')
-        display.create_line(x2+1,y1,x2+1,y2,fill='green')
-        display.create_line(x2+1,y2,x2+1,y3,fill='green')
-        display.create_line(x1,y3,x2+2,y3,fill='green')
-        display.create_line(x1,y2,x1,y3,fill='green')
+        display.create_line(x1,y1,x2+2,y1,fill=color) 
+        display.create_line(x1,y1,x1,y2,fill=color)
+        display.create_line(x2,y2,x1,y2,fill=color)
+        display.create_line(x2+1,y1,x2+1,y2,fill=color)
+        display.create_line(x2+1,y2,x2+1,y3,fill=color)
+        display.create_line(x1,y3,x2+2,y3,fill=color)
+        display.create_line(x1,y2,x1,y3,fill=color)
 
     elif(n==9):
         
 
-        display.create_line(x1,y1,x2+2,y1,fill='green') 
-        display.create_line(x1,y1,x1,y2,fill='green')
-        display.create_line(x2,y2,x1,y2,fill='green')
-        display.create_line(x2+1,y1,x2+1,y2,fill='green')
-        display.create_line(x2+1,y2,x2+1,y3,fill='green')
-        display.create_line(x1,y3,x2+2,y3,fill='green')
+        display.create_line(x1,y1,x2+2,y1,fill=color) 
+        display.create_line(x1,y1,x1,y2,fill=color)
+        display.create_line(x2,y2,x1,y2,fill=color)
+        display.create_line(x2+1,y1,x2+1,y2,fill=color)
+        display.create_line(x2+1,y2,x2+1,y3,fill=color)
+        display.create_line(x1,y3,x2+2,y3,fill=color)
 
     #operadores 
     elif (n=="/"):
@@ -197,6 +200,7 @@ btn12 = Button(app, text="1",height=5,width=10,command=lambda:numeros(1)).place(
 btn13 = Button(app, text="2",height=5,width=10,command=lambda:numeros(2)).place(x=110,y=310)
 btn14 = Button(app, text="3",height=5,width=10,command=lambda:numeros(3)).place(x=195,y=310)
 btn15 = Button(app, text="+",height=5,width=10,command=lambda:numeros("+")).place(x=280,y=310)
+
 
 ##BOTONES OPERADORES    
 Button(app, text="0",height=5,width=10,command=lambda:numeros(0)).place(x=25,y=405,width=165)
