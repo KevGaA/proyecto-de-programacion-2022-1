@@ -46,7 +46,6 @@ def numeros(n):
     
     elif (n==3):
        
-
         display.create_line(x1,y1,x2,y1)
         display.create_line(x2,y1,x2,y2)
         display.create_line(x2,y2,x1,y2)
@@ -55,7 +54,6 @@ def numeros(n):
     
     elif (n==4):
        
-
         display.create_line(x2,y1,x2,y3)
         display.create_line(x1,y2,x2,y2)
         display.create_line(x2,y1,x2,y2)
@@ -63,7 +61,6 @@ def numeros(n):
 
     elif (n==5):
         
-
         display.create_line(x1,y1,x2+2,y1) 
         display.create_line(x1,y1,x1,y2)
         display.create_line(x2,y2,x1,y2)
@@ -72,7 +69,6 @@ def numeros(n):
 
     elif (n==6):
         
-
         display.create_line(x1,y1,x2+2,y1) 
         display.create_line(x1,y1,x1,y2)
         display.create_line(x2,y2,x1,y2)
@@ -139,20 +135,44 @@ def numeros(n):
         display.addtag_below
     
     elif (n=="*"):
-        x1=x+5
+        '''x1=x+5
         x2=x+10
         y1=10
         y2=20
         y3=30
         display.create_line(x2,y1,x1,y3)
         display.create_line(x1,y1,x2,y3)
-        display.create_line(x1,y2,x2,y2)
+        display.create_line(x1,y2,x2,y2)'''
+        
         
 
-    elif (n=="!"):
+    elif (n=="!"): #funcion factorial, no tiene asociado el boton, asi que aún no se puede mostrar en la aplicación
         display.create_line(x1,y1,x1,y3-5)
         display.create_line(x1,y1+19,x1,y3+2)
         display.addtag_below
+    
+    elif(n=="sen"): #funciion seno, no tiene asociado el boton, asi que aún no se puede mostrar en la aplicación
+        #s de sen
+        display.create_line(x1,y1+5,x2+2,y1+5) 
+        display.create_line(x1,y1+5,x1,y2+3)
+        display.create_line(x2,y2+3,x1,y2+3)
+        display.create_line(x2+1,y2+3,x2+1,y3+1)
+        display.create_line(x1,y3,x2+2,y3)
+
+        #e de sen
+        display.create_line(x1+15,y1+5,x2+2,y1+5) 
+        display.create_line(x1+8,y1+5,x1+8,y2+11)
+        display.create_line(x2+10,y2+3,x1+8,y2+3)
+        display.create_line(x2+10,y2-5,x2+10,y3-6)
+        display.create_line(x1+8,y3,x2+10,y3)
+
+        #n de sen
+        display.create_line(x1+18,y1+5,x1+18,y3+1)
+        display.create_line(x1+18,y1+5,x1+25,y3+1)
+        display.create_line(x1+25,y1+5,x1+25,y3+1)
+        
+        
+        
         
         display.addtag_below
     elif (n=="x"):
