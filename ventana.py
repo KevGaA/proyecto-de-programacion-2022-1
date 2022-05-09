@@ -148,6 +148,12 @@ def numeros(n):
         display.create_line(x1,y1,x2,y3)
         display.create_line(x1,y2,x2,y2)
         
+
+    elif (n=="!"):
+        display.create_line(x1,y1,x1,y3-5)
+        display.create_line(x1,y1+19,x1,y3+2)
+        display.addtag_below
+        
         display.addtag_below
     elif (n=="x"):
         i=0
