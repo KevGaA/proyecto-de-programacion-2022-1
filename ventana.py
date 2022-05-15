@@ -9,12 +9,6 @@ from turtle import color
 i=0
 c=0
 
-<<<<<<< HEAD
-
-def numeros(n):
-    global i 
-    global c
-=======
 color = "black"
 color_ope="black"
 ecuacion = []
@@ -23,7 +17,6 @@ def numeros(n):
     global i
     global c
 
->>>>>>> kevgaa
     d2.insert(i,n)
     x=i*10
     x1=x+5
@@ -39,21 +32,14 @@ def numeros(n):
         y1=50
         y2=60
         y3=70
-<<<<<<< HEAD
-=======
         ecuacion.append("/")
->>>>>>> kevgaa
     if (n==0):
         
         display.create_oval(x1,y1,x2,y3)
         display.addtag_all
     elif (n==1):
 
-<<<<<<< HEAD
-        display.create_line(x1,y1,x1,y3)
-=======
         display.create_line(x1,y1,x1,y3,fill=color)
->>>>>>> kevgaa
         display.addtag_below
         ecuacion.append(1)
     
@@ -105,13 +91,8 @@ def numeros(n):
 
     elif(n==7):
        
-<<<<<<< HEAD
-        display.create_line(x1,y1,x2+3,y1)
-        display.create_line(x2+3,y1,x1,y3)
-=======
         display.create_line(x1,y1,x2+3,y1,fill=color)
         display.create_line(x2+3,y1,x1,y3,fill=color)
->>>>>>> kevgaa
 
     elif (n==8):
        
@@ -126,18 +107,6 @@ def numeros(n):
 
     elif(n==9):
         
-<<<<<<< HEAD
-
-        display.create_line(x1,y1,x2+2,y1) 
-        display.create_line(x1,y1,x1,y2)
-        display.create_line(x2,y2,x1,y2)
-        display.create_line(x2+1,y1,x2+1,y2)
-        display.create_line(x2+1,y2,x2+1,y3)
-        display.create_line(x1,y3,x2+2,y3)
-
-
-=======
->>>>>>> kevgaa
 
         display.create_line(x1,y1,x2+2,y1,fill=color) 
         display.create_line(x1,y1,x1,y2,fill=color)
@@ -175,7 +144,7 @@ def numeros(n):
         display.create_line(x1,y2,x2,y2,fill=color_ope)
         display.create_line(x2-3,y1,x2-3,y3,fill=color_ope)
         display.addtag_below
-    
+    ##comentario
     elif (n=="*"):
         x1=x+5
         x2=x+10
@@ -190,10 +159,7 @@ def numeros(n):
     elif (n=="x"):
         i=0
         display.delete("all")
-<<<<<<< HEAD
-=======
         d2.delete(0, END)
->>>>>>> kevgaa
         
     c=n    
     i+=1
@@ -287,15 +253,9 @@ d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
 
-<<<<<<< HEAD
-btn0 = Button(app, text="C",height=5,width=10,command=lambda:numeros("x")).place(x=25,y=25)
-btn1 = Button(app, text="",height=5,width=10).place(x=110,y=25)
-btn2 = Button(app, text="",height=5,width=10).place(x=195,y=25)
-=======
 btn0 = Button(app, text="CE",height=5,width=10,command=lambda:numeros("x")).place(x=25,y=25)
 btn1 = Button(app, text="CORD",height=5,width=10).place(x=110,y=25)
 btn2 = Button(app, text="COLOR",height=5,width=10,command=mostrarlista(ecuacion)).place(x=195,y=25)
->>>>>>> kevgaa
 btn3 = Button(app, text="/",height=5,width=10,command=lambda:numeros("/")).place(x=280,y=25)
 btn3 = Button(app, text=" ",height=5,width=10,command=lambda:numeros(" ")).place(x=365,y=25)
 
