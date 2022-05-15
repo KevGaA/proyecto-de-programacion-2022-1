@@ -10,6 +10,8 @@ i=0
 c=0
 
 color = "black"
+color_ope="black"
+ecuacion = []
 
 def numeros(n):
     global i
@@ -30,6 +32,7 @@ def numeros(n):
         y1=50
         y2=60
         y3=70
+        ecuacion.append("/")
     if (n==0):
         
         display.create_oval(x1,y1,x2,y3)
@@ -38,6 +41,7 @@ def numeros(n):
 
         display.create_line(x1,y1,x1,y3,fill=color)
         display.addtag_below
+        ecuacion.append(1)
     
     #numero 2
     elif (n==2):
@@ -119,7 +123,7 @@ def numeros(n):
         y1=10
         y2=20
         y3=30
-        display.create_line(x2-5,y3+5,x1-10,y3+5,fill=color)
+        display.create_line(x2-5,y3+5,x1-10,y3+5,fill=color_ope)
         display.addtag_below
     
     elif (n=="-"):
@@ -128,7 +132,7 @@ def numeros(n):
         y1=10
         y2=20
         y3=30
-        display.create_line(x1,y2,x2,y2,fill=color)
+        display.create_line(x1,y2,x2,y2,fill=color_ope)
         display.addtag_below
 
     elif (n=="+"):
@@ -137,8 +141,8 @@ def numeros(n):
         y1=10
         y2=20
         y3=30
-        display.create_line(x1,y2,x2,y2,fill=color)
-        display.create_line(x2-3,y1,x2-3,y3,fill=color)
+        display.create_line(x1,y2,x2,y2,fill=color_ope)
+        display.create_line(x2-3,y1,x2-3,y3,fill=color_ope)
         display.addtag_below
     
     elif (n=="*"):
@@ -147,9 +151,9 @@ def numeros(n):
         y1=10
         y2=20
         y3=30
-        display.create_line(x2,y1,x1,y3,fill=color)
-        display.create_line(x1,y1,x2,y3,fill=color)
-        display.create_line(x1,y2,x2,y2,fill=color)
+        display.create_line(x2,y1,x1,y3,fill=color_ope)
+        display.create_line(x1,y1,x2,y3,fill=color_ope)
+        display.create_line(x1,y2,x2,y2,fill=color_ope)
         
         display.addtag_below
     elif (n=="x"):
@@ -167,6 +171,7 @@ def colorpicker1(n):
         color="black"
     elif n==1:
         color="red"
+        geometry = "1000x800"
     elif n==2:
         color="yellow"
     elif n==3:
@@ -191,8 +196,47 @@ def colorpicker1(n):
         color="lime"    
     return color
     
+def colorpicker0(n):
+    global color_ope
+
+    if n==0:
+        color_ope="black"
+    elif n==1:
+        color_ope="red"
+    elif n==2:
+        color_ope="yellow"
+    elif n==3:
+        color_ope="orange" 
+    elif n==4:
+        color_ope="pink" 
+    elif n==5:
+        color_ope="blue" 
+    elif n==6:
+        color_ope="green" 
+    elif n==7:
+        color_ope="cyan" 
+    elif n==8:
+        color_ope="purple" 
+    elif n==9:
+        color_ope="brown"  
+    elif n==10:
+        color_ope="grey" 
+    elif n==11:
+        color_ope="teal" 
+    elif n==12:
+        color_ope="lime"    
+    return color_ope
+
+def mostrarlista(ecuacion,i=0):
+    if i != len(ecuacion):
+        print(ecuacion[i])
+        mostrarlista(ecuacion,i+1)
+
+
+
 
 ##configuracion de la ventana 
+
 app = Tk()
 app.title("Graficador de expresiones matematicas")
 app.geometry("1000x600") ##dimensiones de la ventanan principal ANCHOXALTO
@@ -211,7 +255,7 @@ d2.config(font=('ARIAL',10))
 
 btn0 = Button(app, text="CE",height=5,width=10,command=lambda:numeros("x")).place(x=25,y=25)
 btn1 = Button(app, text="CORD",height=5,width=10).place(x=110,y=25)
-btn2 = Button(app, text="COLOR",height=5,width=10,command=colorpicker1).place(x=195,y=25)
+btn2 = Button(app, text="COLOR",height=5,width=10,command=mostrarlista(ecuacion)).place(x=195,y=25)
 btn3 = Button(app, text="/",height=5,width=10,command=lambda:numeros("/")).place(x=280,y=25)
 
 btn4 = Button(app, text="7",height=5,width=10,command=lambda:numeros(7)).place(x=25,y=120)
@@ -243,6 +287,22 @@ btnc9 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpick
 btnc10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker1(10)).place(x=800,y=340)
 btnc11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker1(11)).place(x=800,y=370)
 btnc12 = Button(app, text="",height=1,width=5,bg="lime",command=lambda:colorpicker1(12)).place(x=800,y=400)
+
+#botones de los colores operadores
+btnc0 = Button(app, text="",height=1,width=5,bg="black",command=lambda:colorpicker0(0)).place(x=850,y=40)
+btnc1 = Button(app, text="",height=1,width=5,bg="red",command=lambda:colorpicker0(1)).place(x=850,y=70)
+btnc2 = Button(app, text="",height=1,width=5,bg="yellow",command=lambda:colorpicker0(2)).place(x=850,y=100)
+btnc3 = Button(app, text="",height=1,width=5,bg="orange",command=lambda:colorpicker0(3)).place(x=850,y=130)
+btnc4 = Button(app, text="",height=1,width=5,bg="pink",command=lambda:colorpicker0(4)).place(x=850,y=160)
+btnc5 = Button(app, text="",height=1,width=5,bg="blue",command=lambda:colorpicker0(5)).place(x=850,y=190)
+btnc6 = Button(app, text="",height=1,width=5,bg="green",command=lambda:colorpicker0(6)).place(x=850,y=220)
+btnc7 = Button(app, text="",height=1,width=5,bg="cyan",command=lambda:colorpicker0(7)).place(x=850,y=250)
+btnc8 = Button(app, text="",height=1,width=5,bg="purple",command=lambda:colorpicker0(8)).place(x=850,y=280)
+btnc9 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpicker0(9)).place(x=850,y=310)
+btnc10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker0(10)).place(x=850,y=340)
+btnc11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker0(11)).place(x=850,y=370)
+btnc12 = Button(app, text="",height=1,width=5,bg="lime",command=lambda:colorpicker0(12)).place(x=850,y=400)
+
 
 ##BOTONES OPERADORES    
 Button(app, text="0",height=5,width=10,command=lambda:numeros(0)).place(x=25,y=405,width=165)
