@@ -144,7 +144,7 @@ def numeros(n):
         display.create_line(x1,y2,x2,y2,fill=color_ope)
         display.create_line(x2-3,y1,x2-3,y3,fill=color_ope)
         display.addtag_below
-    
+    ##comentario
     elif (n=="*"):
         x1=x+5
         x2=x+10
