@@ -244,11 +244,11 @@ app.configure(background="light blue")
 
 #entrada de la calculadora
 display = Canvas(app)
-display.place(x=400,y=25,width=375,height=550)
+display.place(x=460,y=25,width=375,height=550)
 
 #entrada de teclado
 d2 = Entry(app)
-d2.place(x=10,y=525,width=375,height=30)
+d2.place(x=10,y=525,width=434,height=30)
 d2.config(font=('ARIAL',10))
 
 #botones de los numeros 
@@ -257,56 +257,60 @@ btn0 = Button(app, text="CE",height=5,width=10,command=lambda:numeros("x")).plac
 btn1 = Button(app, text="CORD",height=5,width=10).place(x=110,y=25)
 btn2 = Button(app, text="COLOR",height=5,width=10,command=mostrarlista(ecuacion)).place(x=195,y=25)
 btn3 = Button(app, text="/",height=5,width=10,command=lambda:numeros("/")).place(x=280,y=25)
+btn3 = Button(app, text=" ",height=5,width=10,command=lambda:numeros(" ")).place(x=365,y=25)
 
 btn4 = Button(app, text="7",height=5,width=10,command=lambda:numeros(7)).place(x=25,y=120)
 btn5 = Button(app, text="8",height=5,width=10,command=lambda:numeros(8)).place(x=110,y=120)
 btn6 = Button(app, text="9",height=5,width=10,command=lambda:numeros(9)).place(x=195,y=120)
 btn7 = Button(app, text="X",height=5,width=10,command=lambda:numeros("*")).place(x=280,y=120)
-
+Button(app, text=" ",height=5,width=10,command=lambda:numeros(" ")).place(x=365,y=120)
 btn8 = Button(app, text="4",height=5,width=10,command=lambda:numeros(4)).place(x=25,y=215)
 btn9 = Button(app, text="5",height=5,width=10,command=lambda:numeros(5)).place(x=110,y=215)
 btn10 = Button(app, text="6",height=5,width=10,command=lambda:numeros(6)).place(x=195,y=215)
 btn11 = Button(app, text="-",height=5,width=10,command=lambda:numeros("-")).place(x=280,y=215)
-
+Button(app, text=" ",height=5,width=10,command=lambda:numeros(" ")).place(x=365,y=215)
 btn12 = Button(app, text="1",height=5,width=10,command=lambda:numeros(1)).place(x=25,y=310)
 btn13 = Button(app, text="2",height=5,width=10,command=lambda:numeros(2)).place(x=110,y=310)
 btn14 = Button(app, text="3",height=5,width=10,command=lambda:numeros(3)).place(x=195,y=310)
 btn15 = Button(app, text="+",height=5,width=10,command=lambda:numeros("+")).place(x=280,y=310)
-
-#botones de los colores numeros
-btnc0 = Button(app, text="",height=1,width=5,bg="black",command=lambda:colorpicker1(0)).place(x=800,y=40)
-btnc1 = Button(app, text="",height=1,width=5,bg="red",command=lambda:colorpicker1(1)).place(x=800,y=70)
-btnc2 = Button(app, text="",height=1,width=5,bg="yellow",command=lambda:colorpicker1(2)).place(x=800,y=100)
-btnc3 = Button(app, text="",height=1,width=5,bg="orange",command=lambda:colorpicker1(3)).place(x=800,y=130)
-btnc4 = Button(app, text="",height=1,width=5,bg="pink",command=lambda:colorpicker1(4)).place(x=800,y=160)
-btnc5 = Button(app, text="",height=1,width=5,bg="blue",command=lambda:colorpicker1(5)).place(x=800,y=190)
-btnc6 = Button(app, text="",height=1,width=5,bg="green",command=lambda:colorpicker1(6)).place(x=800,y=220)
-btnc7 = Button(app, text="",height=1,width=5,bg="cyan",command=lambda:colorpicker1(7)).place(x=800,y=250)
-btnc8 = Button(app, text="",height=1,width=5,bg="purple",command=lambda:colorpicker1(8)).place(x=800,y=280)
-btnc9 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpicker1(9)).place(x=800,y=310)
-btnc10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker1(10)).place(x=800,y=340)
-btnc11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker1(11)).place(x=800,y=370)
-btnc12 = Button(app, text="",height=1,width=5,bg="lime",command=lambda:colorpicker1(12)).place(x=800,y=400)
-
-#botones de los colores operadores
-btnc0 = Button(app, text="",height=1,width=5,bg="black",command=lambda:colorpicker0(0)).place(x=850,y=40)
-btnc1 = Button(app, text="",height=1,width=5,bg="red",command=lambda:colorpicker0(1)).place(x=850,y=70)
-btnc2 = Button(app, text="",height=1,width=5,bg="yellow",command=lambda:colorpicker0(2)).place(x=850,y=100)
-btnc3 = Button(app, text="",height=1,width=5,bg="orange",command=lambda:colorpicker0(3)).place(x=850,y=130)
-btnc4 = Button(app, text="",height=1,width=5,bg="pink",command=lambda:colorpicker0(4)).place(x=850,y=160)
-btnc5 = Button(app, text="",height=1,width=5,bg="blue",command=lambda:colorpicker0(5)).place(x=850,y=190)
-btnc6 = Button(app, text="",height=1,width=5,bg="green",command=lambda:colorpicker0(6)).place(x=850,y=220)
-btnc7 = Button(app, text="",height=1,width=5,bg="cyan",command=lambda:colorpicker0(7)).place(x=850,y=250)
-btnc8 = Button(app, text="",height=1,width=5,bg="purple",command=lambda:colorpicker0(8)).place(x=850,y=280)
-btnc9 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpicker0(9)).place(x=850,y=310)
-btnc10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker0(10)).place(x=850,y=340)
-btnc11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker0(11)).place(x=850,y=370)
-btnc12 = Button(app, text="",height=1,width=5,bg="lime",command=lambda:colorpicker0(12)).place(x=850,y=400)
-
-
-##BOTONES OPERADORES    
-Button(app, text="0",height=5,width=10,command=lambda:numeros(0)).place(x=25,y=405,width=165)
+Button(app, text=" ",height=5,width=10,command=lambda:numeros(" ")).place(x=365,y=310) 
+Button(app, text="0",height=5,width=10,command=lambda:numeros(0)).place(x=25,y=405)
+Button(app, text="0",height=5,width=10,command=lambda:numeros(0)).place(x=110,y=405)
 Button(app, text=".",height=5,width=10,command=lambda:numeros(".")).place(x=195,y=405)
 Button(app, text="=",height=5,width=10).place(x=280,y=405)
+Button(app, text=" ",height=5,width=10,command=lambda:numeros(" ")).place(x=365,y=405)
+
+#botones de los colores numeros
+btnc0 = Button(app, text="",height=1,width=5,bg="black",command=lambda:colorpicker1(0)).place(x=850,y=40)
+btnc1 = Button(app, text="",height=1,width=5,bg="red",command=lambda:colorpicker1(1)).place(x=850,y=70)
+btnc2 = Button(app, text="",height=1,width=5,bg="yellow",command=lambda:colorpicker1(2)).place(x=850,y=100)
+btnc3 = Button(app, text="",height=1,width=5,bg="orange",command=lambda:colorpicker1(3)).place(x=850,y=130)
+btnc4 = Button(app, text="",height=1,width=5,bg="pink",command=lambda:colorpicker1(4)).place(x=850,y=160)
+btnc5 = Button(app, text="",height=1,width=5,bg="blue",command=lambda:colorpicker1(5)).place(x=850,y=190)
+btnc6 = Button(app, text="",height=1,width=5,bg="green",command=lambda:colorpicker1(6)).place(x=850,y=220)
+btnc7 = Button(app, text="",height=1,width=5,bg="cyan",command=lambda:colorpicker1(7)).place(x=850,y=250)
+btnc8 = Button(app, text="",height=1,width=5,bg="purple",command=lambda:colorpicker1(8)).place(x=850,y=280)
+btnc9 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpicker1(9)).place(x=850,y=310)
+btnc10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker1(10)).place(x=850,y=340)
+btnc11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker1(11)).place(x=850,y=370)
+btnc12 = Button(app, text="",height=1,width=5,bg="lime",command=lambda:colorpicker1(12)).place(x=850,y=400)
+
+#botones de los colores operadores
+btnc0 = Button(app, text="",height=1,width=5,bg="black",command=lambda:colorpicker0(0)).place(x=900,y=40)
+btnc1 = Button(app, text="",height=1,width=5,bg="red",command=lambda:colorpicker0(1)).place(x=900,y=70)
+btnc2 = Button(app, text="",height=1,width=5,bg="yellow",command=lambda:colorpicker0(2)).place(x=900,y=100)
+btnc3 = Button(app, text="",height=1,width=5,bg="orange",command=lambda:colorpicker0(3)).place(x=900,y=130)
+btnc4 = Button(app, text="",height=1,width=5,bg="pink",command=lambda:colorpicker0(4)).place(x=900,y=160)
+btnc5 = Button(app, text="",height=1,width=5,bg="blue",command=lambda:colorpicker0(5)).place(x=900,y=190)
+btnc6 = Button(app, text="",height=1,width=5,bg="green",command=lambda:colorpicker0(6)).place(x=900,y=220)
+btnc7 = Button(app, text="",height=1,width=5,bg="cyan",command=lambda:colorpicker0(7)).place(x=900,y=250)
+btnc8 = Button(app, text="",height=1,width=5,bg="purple",command=lambda:colorpicker0(8)).place(x=900,y=280)
+btnc9 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpicker0(9)).place(x=900,y=310)
+btnc10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker0(10)).place(x=900,y=340)
+btnc11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker0(11)).place(x=900,y=370)
+btnc12 = Button(app, text="",height=1,width=5,bg="lime",command=lambda:colorpicker0(12)).place(x=900,y=400)
+
+
+
 
 app.mainloop()
