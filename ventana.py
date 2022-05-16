@@ -12,6 +12,7 @@ c=0
 color = "black"
 color_ope="black"
 ecuacion = []
+ecuacion2 = []
 
 def numeros(n):
     global i
@@ -361,7 +362,7 @@ btn8 = Button(app, text="4",height=5,width=10,command=lambda:numeros(4)).place(x
 btn9 = Button(app, text="5",height=5,width=10,command=lambda:numeros(5)).place(x=505,y=215)
 btn10 = Button(app, text="6",height=5,width=10,command=lambda:numeros(6)).place(x=590,y=215)
 btn11 = Button(app, text="-",height=5,width=10,command=lambda:numeros("-")).place(x=675,y=215)
-
+btn11 = Button(app, text="-",height=5,width=10,command=lambda:numeros("-")).place(x=675,y=215)
 
 btn12 = Button(app, text="1",height=5,width=10,command=lambda:numeros(1)).place(x=420,y=310)
 btn13 = Button(app, text="2",height=5,width=10,command=lambda:numeros(2)).place(x=505,y=310)
