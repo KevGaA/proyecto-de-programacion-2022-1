@@ -2,7 +2,7 @@ from tkinter import *
 import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
-#aaa
+
 i=0
 c=0
 def numeros(n):
@@ -23,14 +23,16 @@ def numeros(n):
         y1=50
         y2=60
         y3=70
+
     if (n==0):
         
         display.create_oval(x1,y1,x2,y3)
         display.addtag_all
+
     elif (n==1):
         display.create_line(x1,y1,x1,y3)
         display.addtag_below
-    #numero 2
+
     elif (n==2):
         display.create_line(x1,y1,x2,y1)
         display.create_line(x2,y1,x2,y2)
@@ -52,6 +54,7 @@ def numeros(n):
         display.create_line(x1,y2,x2,y2)
         display.create_line(x2,y1,x2,y2)
         display.create_line(x1,y2,x1,y1)
+
     elif (n==5):
         
         display.create_line(x1,y1,x2+2,y1) 
@@ -59,6 +62,7 @@ def numeros(n):
         display.create_line(x2,y2,x1,y2)
         display.create_line(x2+1,y2,x2+1,y3)
         display.create_line(x1,y3,x2+2,y3)
+
     elif (n==6):
         
         display.create_line(x1,y1,x2+2,y1) 
@@ -67,10 +71,12 @@ def numeros(n):
         display.create_line(x2+1,y2,x2+1,y3)
         display.create_line(x1,y3,x2+2,y3)
         display.create_line(x1,y2,x1,y3)
+
     elif(n==7):
        
         display.create_line(x1,y1,x2+3,y1)
         display.create_line(x2+3,y1,x1,y3)
+
     elif (n==8):
        
         display.create_line(x1,y1,x2+2,y1) 
@@ -80,6 +86,7 @@ def numeros(n):
         display.create_line(x2+1,y2,x2+1,y3)
         display.create_line(x1,y3,x2+2,y3)
         display.create_line(x1,y2,x1,y3)
+
     elif(n==9):
         
         display.create_line(x1,y1,x2+2,y1) 
@@ -108,6 +115,7 @@ def numeros(n):
         y3=30
         display.create_line(x1,y2,x2,y2)
         display.addtag_below
+
     elif (n=="+"):
         x1=x+5
         x2=x+10
@@ -127,6 +135,7 @@ def numeros(n):
         display.create_line(x2,y1,x1,y3)
         display.create_line(x1,y1,x2,y3)
         display.create_line(x1,y2,x2,y2)
+
     elif (n=="!"): #funcion factorial, no tiene asociado el boton, asi que aún no se puede mostrar en la aplicación
         display.create_line(x1,y1,x1,y3-5)
         display.create_line(x1,y1+19,x1,y3+2)
@@ -149,8 +158,8 @@ def numeros(n):
         display.create_line(x1+18,y1+5,x1+18,y3+1)
         display.create_line(x1+18,y1+5,x1+25,y3+1)
         display.create_line(x1+25,y1+5,x1+25,y3+1)
+
     elif(n=="cos"): #funcion coseno
-        
         #c de cos
         display.create_line(x1,y1+5,x2+2,y1+5)
         display.create_line(x1,y1+5,x1,y2+10)
@@ -166,7 +175,6 @@ def numeros(n):
 
 
     elif(n=="tan"):
-
         #t de tan
         display.create_line(x1,y1+5,x2+4,y1+5)
         display.create_line(x1+4,y1+5,x1+4,y3)
@@ -181,8 +189,8 @@ def numeros(n):
         display.create_line(x1+20,y1+5,x1+25,y3)
         display.create_line(x1+25,y1+5,x1+25,y3)
 
-
         display.addtag_below
+        
     elif (n=="x"):
         i=0
         display.delete("all")
