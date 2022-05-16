@@ -326,10 +326,12 @@ def modo(n):
     app.geometry("850x670")
     if n==1:
         Button(app, text="SEN",height=5,width=10,command=lambda:numeros("sen")).place(x=760,y=120)
-        btn3 = Button(app, text="MODO ",height=5,width=10,command=lambda:modo(1)).place(x=760,y=25)
+        btn3 = Button(app, text="MODO ",height=5,width=10,command=lambda:modo(2)).place(x=760,y=25)
         Button(app, text="TAN",height=5,width=10,command=lambda:numeros("tan")).place(x=760,y=215)
         Button(app, text="COS",height=5,width=10,command=lambda:numeros("cos")).place(x=760,y=310) 
         Button(app, text="!",height=5,width=10,command=lambda:numeros("!")).place(x=760,y=405)
+    if n==2:
+        app.geometry("757x670")
 
 ##configuracion de la ventana 
 
