@@ -185,7 +185,23 @@ def numeros(n):
         display.create_line(x2+18,y2+3,x1+18,y2+3)
         display.create_line(x2+18,y2+3,x2+18,y3+1)
         display.create_line(x1+18,y3,x2+18,y3)
-        
+
+    elif(n=="tan"):
+
+        #t de tan
+        display.create_line(x1,y1+5,x2+4,y1+5)
+        display.create_line(x1+4,y1+5,x1+4,y3)
+
+        #a de tan
+        display.create_line(x1+13,y1+5,x1+8,y3)
+        display.create_line(x1+13,y1+5,x1+18,y3)
+        display.create_line(x1+10,y1+15,x1+17,y1+15)
+
+        #n de tan
+        display.create_line(x1+20,y1+5,x1+20,y3)
+        display.create_line(x1+20,y1+5,x1+25,y3)
+        display.create_line(x1+25,y1+5,x1+25,y3)
+
         
         display.addtag_below
     elif (n=="x"):
