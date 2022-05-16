@@ -134,7 +134,6 @@ def numeros(n):
         y3=30
         display.create_line(x1,y2,x2,y2,fill=color_ope)
         display.addtag_below
-
     elif (n=="+"):
         x1=x+5
         x2=x+10
@@ -151,10 +150,64 @@ def numeros(n):
         y1=10
         y2=20
         y3=30
-        display.create_line(x2,y1,x1,y3,fill=color_ope)
-        display.create_line(x1,y1,x2,y3,fill=color_ope)
-        display.create_line(x1,y2,x2,y2,fill=color_ope)
+        display.create_line(x2,y1,x1,y3)
+        display.create_line(x1,y1,x2,y3)
+        display.create_line(x1,y2,x2,y2)
+    elif (n=="!"): #funcion factorial, no tiene asociado el boton, asi que aún no se puede mostrar en la aplicación
+        display.create_line(x1,y1,x1,y3-5)
+        display.create_line(x1,y1+19,x1,y3+2)
+        display.addtag_below
+    
+    elif(n=="sen"): #funcion seno, no tiene asociado el boton, asi que aún no se puede mostrar en la aplicación
+        #s de sen
+        display.create_line(x1,y1+5,x2+2,y1+5) 
+        display.create_line(x1,y1+5,x1,y2+3)
+        display.create_line(x2,y2+3,x1,y2+3)
+        display.create_line(x2+1,y2+3,x2+1,y3+1)
+        display.create_line(x1,y3,x2+2,y3)
+        #e de sen
+        display.create_line(x1+15,y1+5,x2+2,y1+5) 
+        display.create_line(x1+8,y1+5,x1+8,y2+11)
+        display.create_line(x2+10,y2+3,x1+8,y2+3)
+        display.create_line(x2+10,y2-5,x2+10,y3-6)
+        display.create_line(x1+8,y3,x2+10,y3)
+        #n de sen
+        display.create_line(x1+18,y1+5,x1+18,y3+1)
+        display.create_line(x1+18,y1+5,x1+25,y3+1)
+        display.create_line(x1+25,y1+5,x1+25,y3+1)
+    elif(n=="cos"): #funcion coseno
         
+        #c de cos
+        display.create_line(x1,y1+5,x2+2,y1+5)
+        display.create_line(x1,y1+5,x1,y2+10)
+        display.create_line(x1,y2+10,x2+2,y2+10)
+        #o de cos
+        display.create_oval(x1+15,y1+5,x2+2,y3)
+        #s de cos
+        display.create_line(x1+18,y1+5,x2+18,y1+5) 
+        display.create_line(x1+18,y1+5,x1+18,y2+3)
+        display.create_line(x2+18,y2+3,x1+18,y2+3)
+        display.create_line(x2+18,y2+3,x2+18,y3+1)
+        display.create_line(x1+18,y3,x2+18,y3)
+
+
+    elif(n=="tan"):
+
+        #t de tan
+        display.create_line(x1,y1+5,x2+4,y1+5)
+        display.create_line(x1+4,y1+5,x1+4,y3)
+
+        #a de tan
+        display.create_line(x1+13,y1+5,x1+8,y3)
+        display.create_line(x1+13,y1+5,x1+18,y3)
+        display.create_line(x1+10,y1+15,x1+17,y1+15)
+
+        #n de tan
+        display.create_line(x1+20,y1+5,x1+20,y3)
+        display.create_line(x1+20,y1+5,x1+25,y3)
+        display.create_line(x1+25,y1+5,x1+25,y3)
+
+
         display.addtag_below
     elif (n=="x"):
         i=0
@@ -241,7 +294,6 @@ app = Tk()
 app.title("Graficador de expresiones matematicas")
 app.geometry("1000x600") ##dimensiones de la ventanan principal ANCHOXALTO
 app.configure(background="light blue")
-
 #entrada de la calculadora
 display = Canvas(app)
 display.place(x=460,y=25,width=375,height=550)
@@ -250,7 +302,6 @@ display.place(x=460,y=25,width=375,height=550)
 d2 = Entry(app)
 d2.place(x=10,y=525,width=434,height=30)
 d2.config(font=('ARIAL',10))
-
 #botones de los numeros 
 
 btn0 = Button(app, text="CE",height=5,width=10,command=lambda:numeros("x")).place(x=25,y=25)
