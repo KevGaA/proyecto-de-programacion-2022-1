@@ -136,12 +136,12 @@ def numeros(n):
         display.create_line(x1,y1,x2,y3)
         display.create_line(x1,y2,x2,y2)
 
-    elif (n=="!"): #funcion factorial, no tiene asociado el boton, asi que aún no se puede mostrar en la aplicación
+    elif (n=="!"): #funcion factorial
         display.create_line(x1,y1,x1,y3-5)
         display.create_line(x1,y1+19,x1,y3+2)
         display.addtag_below
     
-    elif(n=="sen"): #funcion seno, no tiene asociado el boton, asi que aún no se puede mostrar en la aplicación
+    elif(n=="sen"): #funcion seno
         #s de sen
         display.create_line(x1,y1+5,x2+2,y1+5) 
         display.create_line(x1,y1+5,x1,y2+3)
