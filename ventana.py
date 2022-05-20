@@ -37,6 +37,7 @@ def numeros(n):
         y2=60
         y3=70
         ecuacion.append("/")
+        display.addtag_below
     
     if (n==0):
         if anterior=="^":
@@ -44,6 +45,7 @@ def numeros(n):
             anterior=0
         else:
             display.create_oval(x1,y1,x2,y3,fill=color)
+            display.addtag_below
             display.addtag_all
     
     elif (n==1):
@@ -52,6 +54,7 @@ def numeros(n):
             anterior=1
         else:
             display.create_line(x1,y1,x1,y3,fill=color)
+            display.addtag_below
             anterior=1
     
     #numero 2
@@ -65,6 +68,7 @@ def numeros(n):
             display.create_line(x2,y2,x1,y2,fill=color)
             display.create_line(x1,y2,x1,y3,fill=color)
             display.create_line(x1,y3,x2,y3,fill=color)
+            display.addtag_below
             anterior=2
 
     
@@ -78,6 +82,7 @@ def numeros(n):
             display.create_line(x2,y2,x1,y2,fill=color)
             display.create_line(x2,y2,x2,y3,fill=color)
             display.create_line(x2,y3,x1,y3,fill=color)
+            display.addtag_below
             anterior=3
     
     elif (n==4):
@@ -89,6 +94,7 @@ def numeros(n):
             display.create_line(x1,y2,x2,y2,fill=color)
             display.create_line(x2,y1,x2,y2,fill=color)
             display.create_line(x1,y2,x1,y1,fill=color)
+            display.addtag_below
             anterior=4
 
     elif (n==5):
@@ -103,6 +109,7 @@ def numeros(n):
             display.create_line(x2,y2,x1,y2,fill=color)
             display.create_line(x2+1,y2,x2+1,y3,fill=color)
             display.create_line(x1,y3,x2+2,y3,fill=color)
+            display.addtag_below
             anterior=5
 
     elif (n==6):
@@ -116,6 +123,7 @@ def numeros(n):
             display.create_line(x2+1,y2,x2+1,y3,fill=color)
             display.create_line(x1,y3,x2+2,y3,fill=color)
             display.create_line(x1,y2,x1,y3,fill=color)
+            display.addtag_below
             anterior=6
 
     elif(n==7):
@@ -125,6 +133,7 @@ def numeros(n):
         else:
             display.create_line(x1,y1,x2+3,y1,fill=color)
             display.create_line(x2+3,y1,x1,y3,fill=color)
+            display.addtag_below
             anterior=7
 
     elif (n==8):
@@ -139,6 +148,7 @@ def numeros(n):
             display.create_line(x2+1,y2,x2+1,y3,fill=color)
             display.create_line(x1,y3,x2+2,y3,fill=color)
             display.create_line(x1,y2,x1,y3,fill=color)
+            display.addtag_below
             anterior=8
 
     elif(n==9):
@@ -152,6 +162,7 @@ def numeros(n):
             display.create_line(x2+1,y1,x2+1,y2,fill=color)
             display.create_line(x2+1,y2,x2+1,y3,fill=color)
             display.create_line(x1,y3,x2+2,y3,fill=color)
+            display.addtag_below
             anterior=9
 
     #operadores 
@@ -199,6 +210,7 @@ def numeros(n):
             y3=30
             display.create_line(x2,y1,x1,y3,fill=color_ope)
             display.create_line(x1,y1,x2,y3,fill=color_ope)
+            display.addtag_below
             anterior="*"
 
     elif (n=="!"): 
@@ -226,6 +238,7 @@ def numeros(n):
             display.create_line(x1+18,y1+5,x1+18,y3+1,fill=color_ope)
             display.create_line(x1+18,y1+5,x1+25,y3+1,fill=color_ope)
             display.create_line(x1+25,y1+5,x1+25,y3+1,fill=color_ope)
+            display.addtag_below
             anterior="sen"
 
     elif(n=="cos"):
@@ -242,6 +255,7 @@ def numeros(n):
             display.create_line(x2+18,y2+3,x1+18,y2+3,fill=color_ope)
             display.create_line(x2+18,y2+3,x2+18,y3+1,fill=color_ope)
             display.create_line(x1+18,y3,x2+18,y3,fill=color_ope)
+            display.addtag_below
             anterior="cos"
 
 
@@ -262,6 +276,7 @@ def numeros(n):
             display.create_line(x1+20,y1+5,x1+25,y3,fill=color_ope)
             display.create_line(x1+25,y1+5,x1+25,y3,fill=color_ope)
             display.addtag_below
+            anterior="tan"
 
     #BORRAR TOD0
     elif (n=="x"):
@@ -380,6 +395,7 @@ def modo(n):
     app.geometry("850x670")
     if n==1:
         modo_ven=1
+        d2.place(x=420,y=525,width=420,height=30)
         Button(app, text="SEN",height=5,width=10,command=lambda:numeros("sen")).place(x=760,y=120)
         m3 = Button(app, text="MODO ",height=5,width=10,command=lambda:modo(2)).place(x=760,y=25)
         Button(app, text="TAN",height=5,width=10,command=lambda:numeros("tan")).place(x=760,y=215)
@@ -387,6 +403,7 @@ def modo(n):
         Button(app, text="!",height=5,width=10,command=lambda:numeros("!")).place(x=760,y=405)
         print(modo_ven)
     if n==2:
+        d2.place(x=420,y=525,width=330,height=30)
         app.geometry("757x670")
         modo_ven=0
         print(modo_ven)
@@ -409,7 +426,7 @@ display.place(x=25,y=25,width=375,height=550)
 
 #entrada de teclado
 d2 = Entry(app)
-d2.place(x=420,y=525,width=350,height=30)
+d2.place(x=420,y=525,width=330,height=30)
 d2.config(font=('ARIAL',10))
 #botones de los numeros 
 
