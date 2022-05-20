@@ -8,17 +8,18 @@ from turtle import color
 
 #aa
 i=0
-c=0
+c=10
 modo_ven=0
 
 color = "black"
 color_ope="black"
 ecuacion = []
 ecuacion2 = []
+anterior = " "
 
 def numeros(n):
     global i
-    global c
+    global c, anterior
 
     d2.insert(i,n)
     x=i*10
@@ -36,181 +37,233 @@ def numeros(n):
         y2=60
         y3=70
         ecuacion.append("/")
+    
     if (n==0):
-        
-        display.create_oval(x1,y1,x2,y3,fill=color)
-        display.addtag_all
+        if anterior=="^":
+           
+            anterior=0
+        else:
+            display.create_oval(x1,y1,x2,y3,fill=color)
+            display.addtag_all
+    
     elif (n==1):
-
-        display.create_line(x1,y1,x1,y3,fill=color)
-        display.addtag_below
-        ecuacion.append(1)
+        if anterior=="^":
+           
+            anterior=1
+        else:
+            display.create_line(x1,y1,x1,y3,fill=color)
+            anterior=1
     
     #numero 2
     elif (n==2):
-
-        display.create_line(x1,y1,x2,y1,fill=color)
-        display.create_line(x2,y1,x2,y2,fill=color)
-        display.create_line(x2,y2,x1,y2,fill=color)
-        display.create_line(x1,y2,x1,y3,fill=color)
-        display.create_line(x1,y3,x2,y3,fill=color)
+        if anterior=="^":
+            
+            anterior=2
+        else:
+            display.create_line(x1,y1,x2,y1,fill=color)
+            display.create_line(x2,y1,x2,y2,fill=color)
+            display.create_line(x2,y2,x1,y2,fill=color)
+            display.create_line(x1,y2,x1,y3,fill=color)
+            display.create_line(x1,y3,x2,y3,fill=color)
+            anterior=2
 
     
     elif (n==3):
-       
-
-        display.create_line(x1,y1,x2,y1,fill=color)
-        display.create_line(x2,y1,x2,y2,fill=color)
-        display.create_line(x2,y2,x1,y2,fill=color)
-        display.create_line(x2,y2,x2,y3,fill=color)
-        display.create_line(x2,y3,x1,y3,fill=color)
+        if anterior=="^":
+            
+            anterior=3
+        else:
+            display.create_line(x1,y1,x2,y1,fill=color)
+            display.create_line(x2,y1,x2,y2,fill=color)
+            display.create_line(x2,y2,x1,y2,fill=color)
+            display.create_line(x2,y2,x2,y3,fill=color)
+            display.create_line(x2,y3,x1,y3,fill=color)
+            anterior=3
     
     elif (n==4):
-       
-
-        display.create_line(x2,y1,x2,y3,fill=color)
-        display.create_line(x1,y2,x2,y2,fill=color)
-        display.create_line(x2,y1,x2,y2,fill=color)
-        display.create_line(x1,y2,x1,y1,fill=color)
+        if anterior=="^":
+            
+            anterior=4
+        else:
+            display.create_line(x2,y1,x2,y3,fill=color)
+            display.create_line(x1,y2,x2,y2,fill=color)
+            display.create_line(x2,y1,x2,y2,fill=color)
+            display.create_line(x1,y2,x1,y1,fill=color)
+            anterior=4
 
     elif (n==5):
+        if anterior=="^":
+            
+            anterior=5
+        else:
         
 
-        display.create_line(x1,y1,x2+2,y1,fill=color) 
-        display.create_line(x1,y1,x1,y2,fill=color)
-        display.create_line(x2,y2,x1,y2,fill=color)
-        display.create_line(x2+1,y2,x2+1,y3,fill=color)
-        display.create_line(x1,y3,x2+2,y3,fill=color)
+            display.create_line(x1,y1,x2+2,y1,fill=color) 
+            display.create_line(x1,y1,x1,y2,fill=color)
+            display.create_line(x2,y2,x1,y2,fill=color)
+            display.create_line(x2+1,y2,x2+1,y3,fill=color)
+            display.create_line(x1,y3,x2+2,y3,fill=color)
+            anterior=5
 
     elif (n==6):
-        
-
-        display.create_line(x1,y1,x2+2,y1,fill=color) 
-        display.create_line(x1,y1,x1,y2,fill=color)
-        display.create_line(x2,y2,x1,y2,fill=color)
-        display.create_line(x2+1,y2,x2+1,y3,fill=color)
-        display.create_line(x1,y3,x2+2,y3,fill=color)
-        display.create_line(x1,y2,x1,y3,fill=color)
+        if anterior=="^":
+            
+            anterior=6
+        else:
+            display.create_line(x1,y1,x2+2,y1,fill=color) 
+            display.create_line(x1,y1,x1,y2,fill=color)
+            display.create_line(x2,y2,x1,y2,fill=color)
+            display.create_line(x2+1,y2,x2+1,y3,fill=color)
+            display.create_line(x1,y3,x2+2,y3,fill=color)
+            display.create_line(x1,y2,x1,y3,fill=color)
+            anterior=6
 
     elif(n==7):
-       
-        display.create_line(x1,y1,x2+3,y1,fill=color)
-        display.create_line(x2+3,y1,x1,y3,fill=color)
+        if anterior=="^":
+            
+            anterior=7
+        else:
+            display.create_line(x1,y1,x2+3,y1,fill=color)
+            display.create_line(x2+3,y1,x1,y3,fill=color)
+            anterior=7
 
     elif (n==8):
-       
-
-        display.create_line(x1,y1,x2+2,y1,fill=color) 
-        display.create_line(x1,y1,x1,y2,fill=color)
-        display.create_line(x2,y2,x1,y2,fill=color)
-        display.create_line(x2+1,y1,x2+1,y2,fill=color)
-        display.create_line(x2+1,y2,x2+1,y3,fill=color)
-        display.create_line(x1,y3,x2+2,y3,fill=color)
-        display.create_line(x1,y2,x1,y3,fill=color)
+        if anterior=="^":
+            
+            anterior=8
+        else:
+            display.create_line(x1,y1,x2+2,y1,fill=color) 
+            display.create_line(x1,y1,x1,y2,fill=color)
+            display.create_line(x2,y2,x1,y2,fill=color)
+            display.create_line(x2+1,y1,x2+1,y2,fill=color)
+            display.create_line(x2+1,y2,x2+1,y3,fill=color)
+            display.create_line(x1,y3,x2+2,y3,fill=color)
+            display.create_line(x1,y2,x1,y3,fill=color)
+            anterior=8
 
     elif(n==9):
-        
-
-        display.create_line(x1,y1,x2+2,y1,fill=color) 
-        display.create_line(x1,y1,x1,y2,fill=color)
-        display.create_line(x2,y2,x1,y2,fill=color)
-        display.create_line(x2+1,y1,x2+1,y2,fill=color)
-        display.create_line(x2+1,y2,x2+1,y3,fill=color)
-        display.create_line(x1,y3,x2+2,y3,fill=color)
+        if anterior=="^":
+            
+            anterior=9
+        else:
+            display.create_line(x1,y1,x2+2,y1,fill=color) 
+            display.create_line(x1,y1,x1,y2,fill=color)
+            display.create_line(x2,y2,x1,y2,fill=color)
+            display.create_line(x2+1,y1,x2+1,y2,fill=color)
+            display.create_line(x2+1,y2,x2+1,y3,fill=color)
+            display.create_line(x1,y3,x2+2,y3,fill=color)
+            anterior=9
 
     #operadores 
     elif (n=="/"):
-        
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
-        display.create_line(x2-5,y3+5,x1-10,y3+5,fill=color_ope)
-        display.addtag_below
+        if anterior != "-" and anterior != "^" and anterior != "*" and anterior != "+" and anterior != " ":
+            x1=x+5
+            x2=x+10
+            y1=10
+            y2=20
+            y3=30
+            display.create_line(x2-5,y3+5,x1-10,y3+5,fill=color_ope)
+            display.addtag_below
+            anterior="/"
     
     elif (n=="-"):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
-        display.create_line(x1,y2,x2,y2,fill=color_ope)
-        display.addtag_below
+        if anterior != "-" and anterior != "^" and anterior != "*" and anterior != "+":
+            x1=x+5
+            x2=x+10
+            y1=10
+            y2=20
+            y3=30
+            display.create_line(x1,y2,x2,y2,fill=color_ope)
+            display.addtag_below
+            anterior="-"
+
     elif (n=="+"):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
-        display.create_line(x1,y2,x2,y2,fill=color_ope)
-        display.create_line(x2-3,y1,x2-3,y3,fill=color_ope)
-        display.addtag_below
-    ##comentario
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-":
+            x1=x+5
+            x2=x+10
+            y1=10
+            y2=20
+            y3=30
+            display.create_line(x1,y2,x2,y2,fill=color_ope)
+            display.create_line(x2-3,y1,x2-3,y3,fill=color_ope)
+            display.addtag_below
+            anterior="+"
+
+ 
     elif (n=="*"):
-        x1=x+5
-        x2=x+10
-        y1=10
-        y2=20
-        y3=30
-        display.create_line(x2,y1,x1,y3,fill=color_ope)
-        display.create_line(x1,y1,x2,y3,fill=color_ope)
-    elif (n=="!"): #funcion factorial, no tiene asociado el boton, asi que aún no se puede mostrar en la aplicación
-        display.create_line(x1,y1,x1,y3-5,fill=color_ope)
-        display.create_line(x1,y1+19,x1,y3+2,fill=color_ope)
-        display.addtag_below
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-":
+            x1=x+5
+            x2=x+10
+            y1=10
+            y2=20
+            y3=30
+            display.create_line(x2,y1,x1,y3,fill=color_ope)
+            display.create_line(x1,y1,x2,y3,fill=color_ope)
+            anterior="*"
+
+    elif (n=="!"): 
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!":
+            display.create_line(x1,y1,x1,y3-5,fill=color_ope)
+            display.create_line(x1,y1+19,x1,y3+2,fill=color_ope)
+            display.addtag_below
+            anterior="!"
     
-    elif(n=="sen"): #funcion seno, no tiene asociado el boton, asi que aún no se puede mostrar en la aplicación
-        #s de sen
-        display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope) 
-        display.create_line(x1,y1+5,x1,y2+3,fill=color_ope)
-        display.create_line(x2,y2+3,x1,y2+3,fill=color_ope)
-        display.create_line(x2+1,y2+3,x2+1,y3+1,fill=color_ope)
-        display.create_line(x1,y3,x2+2,y3,fill=color_ope)
-        #e de sen
-        display.create_line(x1+15,y1+5,x2+2,y1+5,fill=color_ope) 
-        display.create_line(x1+8,y1+5,x1+8,y2+11,fill=color_ope)
-        display.create_line(x2+10,y2+3,x1+8,y2+3,fill=color_ope)
-        display.create_line(x2+10,y2-5,x2+10,y3-6,fill=color_ope)
-        display.create_line(x1+8,y3,x2+10,y3,fill=color_ope)
-        #n de sen
-        display.create_line(x1+18,y1+5,x1+18,y3+1,fill=color_ope)
-        display.create_line(x1+18,y1+5,x1+25,y3+1,fill=color_ope)
-        display.create_line(x1+25,y1+5,x1+25,y3+1,fill=color_ope)
-    elif(n=="cos"): #funcion coseno
-        
-        #c de cos
-        display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope)
-        display.create_line(x1,y1+5,x1,y2+10,fill=color_ope)
-        display.create_line(x1,y2+10,x2+2,y2+10,fill=color_ope)
-        #o de cos
-        display.create_oval(x1+15,y1+5,x2+2,y3,fill=color_ope)
-        #s de cos
-        display.create_line(x1+18,y1+5,x2+18,y1+5,fill=color_ope) 
-        display.create_line(x1+18,y1+5,x1+18,y2+3,fill=color_ope)
-        display.create_line(x2+18,y2+3,x1+18,y2+3,fill=color_ope)
-        display.create_line(x2+18,y2+3,x2+18,y3+1,fill=color_ope)
-        display.create_line(x1+18,y3,x2+18,y3,fill=color_ope)
+    elif(n=="sen"): 
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen":
+            #s de sen
+            display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope) 
+            display.create_line(x1,y1+5,x1,y2+3,fill=color_ope)
+            display.create_line(x2,y2+3,x1,y2+3,fill=color_ope)
+            display.create_line(x2+1,y2+3,x2+1,y3+1,fill=color_ope)
+            display.create_line(x1,y3,x2+2,y3,fill=color_ope)
+            #e de sen
+            display.create_line(x1+15,y1+5,x2+2,y1+5,fill=color_ope) 
+            display.create_line(x1+8,y1+5,x1+8,y2+11,fill=color_ope)
+            display.create_line(x2+10,y2+3,x1+8,y2+3,fill=color_ope)
+            display.create_line(x2+10,y2-5,x2+10,y3-6,fill=color_ope)
+            display.create_line(x1+8,y3,x2+10,y3,fill=color_ope)
+            #n de sen
+            display.create_line(x1+18,y1+5,x1+18,y3+1,fill=color_ope)
+            display.create_line(x1+18,y1+5,x1+25,y3+1,fill=color_ope)
+            display.create_line(x1+25,y1+5,x1+25,y3+1,fill=color_ope)
+            anterior="sen"
+
+    elif(n=="cos"):
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos":
+            #c de cos
+            display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope)
+            display.create_line(x1,y1+5,x1,y2+10,fill=color_ope)
+            display.create_line(x1,y2+10,x2+2,y2+10,fill=color_ope)
+            #o de cos
+            display.create_oval(x1+15,y1+5,x2+2,y3,fill=color_ope)
+            #s de cos
+            display.create_line(x1+18,y1+5,x2+18,y1+5,fill=color_ope) 
+            display.create_line(x1+18,y1+5,x1+18,y2+3,fill=color_ope)
+            display.create_line(x2+18,y2+3,x1+18,y2+3,fill=color_ope)
+            display.create_line(x2+18,y2+3,x2+18,y3+1,fill=color_ope)
+            display.create_line(x1+18,y3,x2+18,y3,fill=color_ope)
+            anterior="cos"
 
 
     elif(n=="tan"):
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
 
-        #t de tan
-        display.create_line(x1,y1+5,x2+4,y1+5,fill=color_ope)
-        display.create_line(x1+4,y1+5,x1+4,y3,fill=color_ope)
+            #t de tan
+            display.create_line(x1,y1+5,x2+4,y1+5,fill=color_ope)
+            display.create_line(x1+4,y1+5,x1+4,y3,fill=color_ope)
 
-        #a de tan
-        display.create_line(x1+13,y1+5,x1+8,y3,fill=color_ope)
-        display.create_line(x1+13,y1+5,x1+18,y3,fill=color_ope)
-        display.create_line(x1+10,y1+15,x1+17,y1+15,fill=color_ope)
+            #a de tan
+            display.create_line(x1+13,y1+5,x1+8,y3,fill=color_ope)
+            display.create_line(x1+13,y1+5,x1+18,y3,fill=color_ope)
+            display.create_line(x1+10,y1+15,x1+17,y1+15,fill=color_ope)
 
-        #n de tan
-        display.create_line(x1+20,y1+5,x1+20,y3,fill=color_ope)
-        display.create_line(x1+20,y1+5,x1+25,y3,fill=color_ope)
-        display.create_line(x1+25,y1+5,x1+25,y3,fill=color_ope)
+            #n de tan
+            display.create_line(x1+20,y1+5,x1+20,y3,fill=color_ope)
+            display.create_line(x1+20,y1+5,x1+25,y3,fill=color_ope)
+            display.create_line(x1+25,y1+5,x1+25,y3,fill=color_ope)
+            display.addtag_below
 
-
-        display.addtag_below
+    #BORRAR TOD0
     elif (n=="x"):
         i=0
         display.delete("all")
