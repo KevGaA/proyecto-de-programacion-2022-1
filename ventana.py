@@ -277,6 +277,13 @@ def numeros(n):
             display.create_line(x1+25,y1+5,x1+25,y3,fill=color_ope)
             display.addtag_below
             anterior="tan"
+    
+    elif n=="^": 
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
+            anterior = "^"
+            i=i-30
+        else:
+            return 0
 
     #BORRAR TOD0
     elif (n=="x"):
@@ -453,8 +460,8 @@ btn15 = Button(app, text="+",height=5,width=10,bg="#FF980B",relief="ridge",comma
 
 
 Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=420,y=405)
-Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=505,y=405)
-Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(".")).place(x=590,y=405)
+Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(".")).place(x=505,y=405)
+Button(app, text="^",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("^")).place(x=590,y=405)
 Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge").place(x=675,y=405)
 colores()
 
