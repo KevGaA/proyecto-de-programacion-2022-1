@@ -178,7 +178,7 @@ def numeros(n):
             anterior="/"
     
     elif (n=="-"):
-        if anterior != "-" and anterior != "^" and anterior != "*" and anterior != "+":
+        if anterior != "-" and anterior != "^" and anterior != "*":
             x1=x+5
             x2=x+10
             y1=10
@@ -435,8 +435,8 @@ display.place(x=25,y=25,width=375,height=550)
 d2 = Entry(app)
 d2.place(x=420,y=525,width=330,height=30)
 d2.config(font=('ARIAL',10))
-#botones de los numeros 
 
+#botones de los numeros 
 btn0 = Button(app, text="CE",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:numeros("x")).place(x=420,y=25)
 btn1 = Button(app, text="CIENTIFICA",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:modo(1)).place(x=505,y=25)
 btn2 = Button(app, text="COORD",height=5,width=10,bg="#C2C2C2",relief="ridge").place(x=590,y=25)
