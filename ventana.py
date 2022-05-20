@@ -401,12 +401,12 @@ def modo(n):
         Button(app, text="TAN",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("tan")).place(x=760,y=215)
         Button(app, text="COS",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("cos")).place(x=760,y=310) 
         Button(app, text="!",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("!")).place(x=760,y=405)
-        print(modo_ven)
+       
     if n==2:
         d2.place(x=420,y=525,width=330,height=30)
         app.geometry("757x670")
         modo_ven=0
-        print(modo_ven)
+        
     return modo_ven
        
         
