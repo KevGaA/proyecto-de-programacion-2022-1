@@ -254,6 +254,8 @@ def numeros(n):
             display.create_line(x1+25,y1+5,x1+25,y3+1,fill=color_ope)
             display.addtag_below
             anterior="sen"
+        else:
+            i-=1
 
     elif(n=="cos"):
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos":
@@ -302,7 +304,7 @@ def numeros(n):
         d2.delete(0, END)
 
     #ultimo operador
-    if(n=="/"  or n=="*" or n=="-" or "+"):
+    if(n=="/"  or n=="*" or n=="-" or "+" or "^" or "tan" or "sen" or "cos" or "!" ):
         c=n
         
     i+=1
