@@ -354,21 +354,26 @@ def numeros(n):
         d2.delete(0, END)
         anterior=" "
 
+    ##AUMENTADOR DE TAMAÑO
     if n=="y":
         grande=1
+        i=0
         d2.delete(0, END)
-
     if n=="y1":
         grande=2
+        i=0
         d2.delete(0, END)
     if n=="y2":
         grande=4
+        i=0
         d2.delete(0, END)
     if n=="y3":
         grande=8
+        i=0
         d2.delete(0, END)
     if n=="y4":
         grande=10
+        i=0
         d2.delete(0, END)
 
 
