@@ -41,7 +41,7 @@ def numeros(n):
     
     if (n==0):
         if anterior=="^":
-            print("test")
+            
             anterior=0
         else:
             display.create_oval(x1,y1,x2,y3,fill=color)
@@ -281,7 +281,6 @@ def numeros(n):
     elif n=="^": 
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
             anterior = "^"
-            i=i-30
         else:
             return 0
 
