@@ -4,7 +4,6 @@ from tkinter import *
 import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
-from turtle import color
 
 #aa
 i=0
@@ -29,6 +28,12 @@ def numeros(n):
     y2=20
     y3=30
     
+    if(c=="^"):
+        x1=x+1
+        x2=x+5
+        y1=5
+        y2=10
+        y3=15
     if(c=="/"):
         i-=1
         x1=x-15
@@ -38,6 +43,7 @@ def numeros(n):
         y3=70
         ecuacion.append("/")
         display.addtag_below
+    
     
     if (n==0):
         if anterior=="^":
@@ -176,6 +182,8 @@ def numeros(n):
             display.create_line(x2-5,y3+5,x1-10,y3+5,fill=color_ope)
             display.addtag_below
             anterior="/"
+        else:
+            i-=1
     
     elif (n=="-"):
         if anterior != "-" and anterior != "^" and anterior != "*" and anterior != "+":
@@ -187,6 +195,8 @@ def numeros(n):
             display.create_line(x1,y2,x2,y2,fill=color_ope)
             display.addtag_below
             anterior="-"
+        else:
+            i-=1
 
     elif (n=="+"):
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-":
@@ -199,7 +209,8 @@ def numeros(n):
             display.create_line(x2-3,y1,x2-3,y3,fill=color_ope)
             display.addtag_below
             anterior="+"
-
+        else:
+            i-=1   
  
     elif (n=="*"):
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-":
@@ -212,6 +223,8 @@ def numeros(n):
             display.create_line(x1,y1,x2,y3,fill=color_ope)
             display.addtag_below
             anterior="*"
+        else:
+            i-=1
 
     elif (n=="!"): 
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!":
@@ -219,7 +232,8 @@ def numeros(n):
             display.create_line(x1,y1+19,x1,y3+2,fill=color_ope)
             display.addtag_below
             anterior="!"
-    
+        else:
+            i-=1
     elif(n=="sen"): 
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen":
             #s de sen
@@ -257,7 +271,8 @@ def numeros(n):
             display.create_line(x1+18,y3,x2+18,y3,fill=color_ope)
             display.addtag_below
             anterior="cos"
-
+        else:
+            i-=1
 
     elif(n=="tan"):
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
@@ -277,15 +292,19 @@ def numeros(n):
             display.create_line(x1+25,y1+5,x1+25,y3,fill=color_ope)
             display.addtag_below
             anterior="tan"
-
+            i+=3
+        else:
+            i-=1
     #BORRAR TOD0
     elif (n=="x"):
         i=0
         display.delete("all")
         d2.delete(0, END)
 
+    #ultimo operador
+    if(n=="/"  or n=="*" or n=="-" or "+"):
+        c=n
         
-    c=n    
     i+=1
     
 def colorpicker1(n):
@@ -452,7 +471,7 @@ btn14 = Button(app, text="3",height=5,width=10,bg="#818181",relief="ridge",comma
 btn15 = Button(app, text="+",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("+")).place(x=675,y=310)
 
 
-Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=420,y=405)
+Button(app, text="^",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("^")).place(x=420,y=405)
 Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=505,y=405)
 Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(".")).place(x=590,y=405)
 Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge").place(x=675,y=405)
