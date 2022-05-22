@@ -41,7 +41,7 @@ def numeros(n):
     
     if (n==0):
         if anterior=="^":
-           
+            print("test")
             anterior=0
         else:
             display.create_oval(x1,y1,x2,y3,fill=color)
