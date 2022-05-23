@@ -535,7 +535,7 @@ def calcular():
         math_expression = parser.expr(display_state).compile()
         result = eval(math_expression)
         d2.delete(0, END)
-        print(math_expression)
+        print(result)
         
     except Exception:
         d2.delete(0, END)
