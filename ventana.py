@@ -1,9 +1,14 @@
 from cProfile import label
+from email import parser
 from sre_parse import State
 from tkinter import *
-import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
+<<<<<<< HEAD
+=======
+from turtle import clear, color, width
+from tkinter import *
+>>>>>>> kevgaa
 
 #aa
 i=0
@@ -15,18 +20,32 @@ color_ope="black"
 ecuacion = []
 ecuacion2 = []
 anterior = " "
+grande= 1
+grandex=1
 
 def numeros(n):
     global i
     global c, anterior
+    global x1,x2,y1,y2,y3
+    global x11,x22,y11,y22,y33
+    global grande,grandex
 
+    
     d2.insert(i,n)
-    x=i*10
-    x1=x+5
-    x2=x+10
-    y1=10
-    y2=20
-    y3=30
+    
+    x=i*10*grandex
+    x1=x+5*grande
+    x2=x+10*grande
+    y1=10*grande
+    y2=20*grande
+    y3=30*grande
+
+    ##elevados
+    x11=x+1*grande
+    x22=x+5*grande
+    y11=5*grande
+    y22=10*grande
+    y33=15*grande
     
     if(c=="^"):
         x1=x+1
@@ -47,7 +66,6 @@ def numeros(n):
     
     if (n==0):
         if anterior=="^":
-           
             anterior=0
         else:
             display.create_oval(x1,y1,x2,y3,fill=color)
@@ -56,7 +74,7 @@ def numeros(n):
     
     elif (n==1):
         if anterior=="^":
-           
+            display.create_line(x11,y11,x11,y33,fill=color)
             anterior=1
         else:
             display.create_line(x1,y1,x1,y3,fill=color)
@@ -66,7 +84,11 @@ def numeros(n):
     #numero 2
     elif (n==2):
         if anterior=="^":
-            
+            display.create_line(x11,y11,x22,y11,fill=color)
+            display.create_line(x22,y11,x22,y22,fill=color)
+            display.create_line(x22,y22,x11,y22,fill=color)
+            display.create_line(x11,y22,x11,y33,fill=color)
+            display.create_line(x11,y33,x22,y33,fill=color)
             anterior=2
         else:
             display.create_line(x1,y1,x2,y1,fill=color)
@@ -80,7 +102,11 @@ def numeros(n):
     
     elif (n==3):
         if anterior=="^":
-            
+            display.create_line(x11,y11,x22,y11,fill=color)
+            display.create_line(x22,y11,x22,y22,fill=color)
+            display.create_line(x22,y22,x11,y22,fill=color)
+            display.create_line(x22,y22,x22,y33,fill=color)
+            display.create_line(x22,y33,x11,y33,fill=color)
             anterior=3
         else:
             display.create_line(x1,y1,x2,y1,fill=color)
@@ -93,7 +119,10 @@ def numeros(n):
     
     elif (n==4):
         if anterior=="^":
-            
+            display.create_line(x22,y11,x22,y33,fill=color)
+            display.create_line(x11,y22,x22,y22,fill=color)
+            display.create_line(x22,y11,x22,y22,fill=color)
+            display.create_line(x11,y22,x11,y11,fill=color)
             anterior=4
         else:
             display.create_line(x2,y1,x2,y3,fill=color)
@@ -105,11 +134,13 @@ def numeros(n):
 
     elif (n==5):
         if anterior=="^":
-            
+            display.create_line(x11,y11,x22+2,y11,fill=color) 
+            display.create_line(x11,y11,x11,y22,fill=color)
+            display.create_line(x22,y22,x11,y22,fill=color)
+            display.create_line(x22+1,y22,x22+1,y33,fill=color)
+            display.create_line(x11,y33,x22+2,y33,fill=color)
             anterior=5
         else:
-        
-
             display.create_line(x1,y1,x2+2,y1,fill=color) 
             display.create_line(x1,y1,x1,y2,fill=color)
             display.create_line(x2,y2,x1,y2,fill=color)
@@ -120,7 +151,12 @@ def numeros(n):
 
     elif (n==6):
         if anterior=="^":
-            
+            display.create_line(x11,y11,x22+2,y11,fill=color) 
+            display.create_line(x11,y11,x11,y22,fill=color)
+            display.create_line(x22,y22,x11,y22,fill=color)
+            display.create_line(x22+1,y22,x22+1,y33,fill=color)
+            display.create_line(x11,y33,x22+2,y33,fill=color)
+            display.create_line(x11,y22,x11,y33,fill=color)
             anterior=6
         else:
             display.create_line(x1,y1,x2+2,y1,fill=color) 
@@ -134,7 +170,8 @@ def numeros(n):
 
     elif(n==7):
         if anterior=="^":
-            
+            display.create_line(x11,y11,x22+3,y11,fill=color)
+            display.create_line(x22+3,y11,x11,y33,fill=color)
             anterior=7
         else:
             display.create_line(x1,y1,x2+3,y1,fill=color)
@@ -144,7 +181,13 @@ def numeros(n):
 
     elif (n==8):
         if anterior=="^":
-            
+            display.create_line(x11,y11,x22+2,y11,fill=color) 
+            display.create_line(x11,y11,x11,y22,fill=color)
+            display.create_line(x22,y22,x11,y22,fill=color)
+            display.create_line(x22+1,y11,x22+1,y22,fill=color)
+            display.create_line(x22+1,y22,x22+1,y33,fill=color)
+            display.create_line(x11,y33,x22+2,y33,fill=color)
+            display.create_line(x11,y22,x11,y33,fill=color)
             anterior=8
         else:
             display.create_line(x1,y1,x2+2,y1,fill=color) 
@@ -159,7 +202,12 @@ def numeros(n):
 
     elif(n==9):
         if anterior=="^":
-            
+            display.create_line(x11,y11,x22+2,y11,fill=color) 
+            display.create_line(x11,y11,x11,y22,fill=color)
+            display.create_line(x22,y22,x11,y22,fill=color)
+            display.create_line(x22+1,y11,x22+1,y22,fill=color)
+            display.create_line(x22+1,y22,x22+1,y33,fill=color)
+            display.create_line(x11,y33,x22+2,y33,fill=color)
             anterior=9
         else:
             display.create_line(x1,y1,x2+2,y1,fill=color) 
@@ -186,7 +234,7 @@ def numeros(n):
             i-=1
     
     elif (n=="-"):
-        if anterior != "-" and anterior != "^" and anterior != "*" and anterior != "+":
+        if anterior != "-" and anterior != "^" and anterior != "*":
             x1=x+5
             x2=x+10
             y1=10
@@ -210,7 +258,12 @@ def numeros(n):
             display.addtag_below
             anterior="+"
         else:
+<<<<<<< HEAD
             i-=1   
+=======
+            i-=1
+
+>>>>>>> kevgaa
  
     elif (n=="*"):
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-":
@@ -222,20 +275,25 @@ def numeros(n):
             display.create_line(x2,y1,x1,y3,fill=color_ope)
             display.create_line(x1,y1,x2,y3,fill=color_ope)
             display.addtag_below
+
             anterior="*"
         else:
             i-=1
 
     elif (n=="!"): 
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!":
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
             display.create_line(x1,y1,x1,y3-5,fill=color_ope)
             display.create_line(x1,y1+19,x1,y3+2,fill=color_ope)
             display.addtag_below
             anterior="!"
         else:
             i-=1
+<<<<<<< HEAD
+=======
+    
+>>>>>>> kevgaa
     elif(n=="sen"): 
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen":
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
             #s de sen
             display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope) 
             display.create_line(x1,y1+5,x1,y2+3,fill=color_ope)
@@ -253,10 +311,13 @@ def numeros(n):
             display.create_line(x1+18,y1+5,x1+25,y3+1,fill=color_ope)
             display.create_line(x1+25,y1+5,x1+25,y3+1,fill=color_ope)
             display.addtag_below
+            i+=3
             anterior="sen"
+        else:
+            i-=1
 
     elif(n=="cos"):
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos":
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
             #c de cos
             display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope)
             display.create_line(x1,y1+5,x1,y2+10,fill=color_ope)
@@ -271,41 +332,89 @@ def numeros(n):
             display.create_line(x1+18,y3,x2+18,y3,fill=color_ope)
             display.addtag_below
             anterior="cos"
+<<<<<<< HEAD
+        else:
+            i-=1
+=======
+            i+=3
         else:
             i-=1
 
+>>>>>>> kevgaa
+
     elif(n=="tan"):
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
 
             #t de tan
             display.create_line(x1,y1+5,x2+4,y1+5,fill=color_ope)
             display.create_line(x1+4,y1+5,x1+4,y3,fill=color_ope)
-
+          
             #a de tan
             display.create_line(x1+13,y1+5,x1+8,y3,fill=color_ope)
             display.create_line(x1+13,y1+5,x1+18,y3,fill=color_ope)
             display.create_line(x1+10,y1+15,x1+17,y1+15,fill=color_ope)
-
+            
             #n de tan
             display.create_line(x1+20,y1+5,x1+20,y3,fill=color_ope)
             display.create_line(x1+20,y1+5,x1+25,y3,fill=color_ope)
             display.create_line(x1+25,y1+5,x1+25,y3,fill=color_ope)
             display.addtag_below
+            i+=3
             anterior="tan"
+<<<<<<< HEAD
             i+=3
         else:
             i-=1
+=======
+        else:
+            i-=1
+    
+    elif n=="^": 
+        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
+            anterior = "^"
+        else:
+            return 0
+
+>>>>>>> kevgaa
     #BORRAR TOD0
-    elif (n=="x"):
+    if (n=="x"):
         i=0
         display.delete("all")
         d2.delete(0, END)
+        anterior=" "
 
+    ##AUMENTADOR DE TAMAÑO
+    if n=="y":
+        grande=1
+        i=0
+        d2.delete(0, END)
+    if n=="y1":
+        grande=2
+        i=0
+        d2.delete(0, END)
+    if n=="y2":
+        grande=4
+        i=0
+        d2.delete(0, END)
+    if n=="y3":
+        grande=8
+        i=0
+        d2.delete(0, END)
+    if n=="y4":
+        grande=10
+        i=0
+        d2.delete(0, END)
+
+<<<<<<< HEAD
     #ultimo operador
     if(n=="/"  or n=="*" or n=="-" or "+"):
         c=n
         
     i+=1
+=======
+    c=n    
+    i+=1*grande
+>>>>>>> kevgaa
     
 def colorpicker1(n):
     global color
@@ -401,7 +510,6 @@ def colores():
         btnc10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker0(10)).place(x=620,y=630)
         btnc11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker0(11)).place(x=670,y=630)
         btnc12 = Button(app, text="",height=1,width=4,bg="lime",command=lambda:colorpicker0(12)).place(x=720,y=630)
-
         
 
 def mostrarlista(ecuacion,i=0):
@@ -412,46 +520,91 @@ def mostrarlista(ecuacion,i=0):
 def modo(n):
     global modo_ven
     app.geometry("850x670")
-    if n==1:
-        modo_ven=1
+
+    if modo_ven%2==0:
         d2.place(x=420,y=525,width=420,height=30)
         Button(app, text="SEN",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("sen")).place(x=760,y=120)
-        m3 = Button(app, text="CIENTIFICA'NT",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:modo(2)).place(x=760,y=25)
+        m3 = Button(app, text=" ",height=5,width=10,bg="#FF980B",relief="ridge").place(x=760,y=25)
         Button(app, text="TAN",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("tan")).place(x=760,y=215)
         Button(app, text="COS",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("cos")).place(x=760,y=310) 
         Button(app, text="!",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("!")).place(x=760,y=405)
-        print(modo_ven)
-    if n==2:
+    
+    if modo_ven%2!=0:
         d2.place(x=420,y=525,width=330,height=30)
         app.geometry("757x670")
-        modo_ven=0
-        print(modo_ven)
-    return modo_ven
-       
+    modo_ven=modo_ven+1
         
-    
+    return modo_ven
 
 
-##configuracion de la ventana 
+def cord(n):
+    if n==1:
+        display.place_forget()  
+        
+def menubar():
+    ############################################################## barra de menu
+    menubar = Menu(app)
+    app.config(menu=menubar)
+
+    filemenu = Menu(menubar)
+    editmenu = Menu(menubar)
+    helpmenu = Menu(menubar)
+
+    menubar.add_cascade(label="agrandar", menu=filemenu)
+    menubar.add_cascade(label="Ayuda", menu=helpmenu)
+
+    filemenu.add_command(label="X1",command=lambda:numeros("y"))
+    filemenu.add_command(label="X2",command=lambda:numeros("y1"))
+    filemenu.add_command(label="X4",command=lambda:numeros("y2"))
+    filemenu.add_command(label="X8",command=lambda:numeros("y3"))
+    filemenu.add_command(label="X10",command=lambda:numeros("y4"))
+
+    filemenu.add_separator()
+    filemenu.add_command(label="Salir", command=app.quit)
+
+    helpmenu.add_command(label="Ayuda")
+    helpmenu.add_separator()
+    helpmenu.add_command(label="Acerca de...")
+
+def calcular():
+    display_state= d2.get()
+    try:
+        math_expression = parser.expr(display_state).compile()
+        result = eval(math_expression)
+        d2.delete(0, END)
+        print(math_expression)
+        
+    except Exception:
+        d2.delete(0, END)
+
+#############################################################
+###############################################################configuracion de la ventana 
 
 app = Tk()
 app.title("Graficador de expresiones matematicas")
 app.geometry("757x670") ##dimensiones de la ventanan principal ANCHOXALTO
 app.configure(background="#515151")
 app.resizable (0,0)
-#entrada de la calculadora
-display = Canvas(app)
-display.place(x=25,y=25,width=375,height=550)
+#############################################################
 
-#entrada de teclado
+
+
+##############################################################entrada de la calculadora
+display = Canvas(app,width=375,height=550)
+display.place(x=25,y=25,width=375,height=550)
+#############################################################
+
+##############################################################entrada de teclado
 d2 = Entry(app)
 d2.place(x=420,y=525,width=330,height=30)
 d2.config(font=('ARIAL',10))
-#botones de los numeros 
+
+##############################################################botones de los numeros 
+
 
 btn0 = Button(app, text="CE",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:numeros("x")).place(x=420,y=25)
 btn1 = Button(app, text="CIENTIFICA",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:modo(1)).place(x=505,y=25)
-btn2 = Button(app, text="COORD",height=5,width=10,bg="#C2C2C2",relief="ridge").place(x=590,y=25)
+btn2 = Button(app, text="COORD",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:cord(1)).place(x=590,y=25)
 btn3 = Button(app, text="/",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("/")).place(x=675,y=25)
 
 btn4 = Button(app, text="7",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(7)).place(x=420,y=120)
@@ -471,11 +624,19 @@ btn14 = Button(app, text="3",height=5,width=10,bg="#818181",relief="ridge",comma
 btn15 = Button(app, text="+",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("+")).place(x=675,y=310)
 
 
+<<<<<<< HEAD
 Button(app, text="^",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("^")).place(x=420,y=405)
 Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=505,y=405)
 Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(".")).place(x=590,y=405)
 Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge").place(x=675,y=405)
+=======
+Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=420,y=405)
+Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(".")).place(x=505,y=405)
+Button(app, text="^",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("^")).place(x=590,y=405)
+Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:calcular()).place(x=675,y=405)
+>>>>>>> kevgaa
 colores()
-
+menubar()
+#############################################################
 
 app.mainloop()
