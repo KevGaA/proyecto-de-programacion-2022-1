@@ -15,7 +15,6 @@ modo_ven=0
 color = "black"
 color_ope="black"
 ecuacion = []
-ecuacion2 = []
 anterior = " "
 grande= 1
 grandex=1
