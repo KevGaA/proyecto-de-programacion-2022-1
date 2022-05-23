@@ -4,11 +4,8 @@ from sre_parse import State
 from tkinter import *
 from tkinter import font
 from tkinter import Canvas
-<<<<<<< HEAD
-=======
 from turtle import clear, color, width
 from tkinter import *
->>>>>>> kevgaa
 
 #aa
 i=0
@@ -258,12 +255,8 @@ def numeros(n):
             display.addtag_below
             anterior="+"
         else:
-<<<<<<< HEAD
-            i-=1   
-=======
             i-=1
 
->>>>>>> kevgaa
  
     elif (n=="*"):
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != " " and anterior != "-":
@@ -288,10 +281,7 @@ def numeros(n):
             anterior="!"
         else:
             i-=1
-<<<<<<< HEAD
-=======
     
->>>>>>> kevgaa
     elif(n=="sen"): 
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
             #s de sen
@@ -332,15 +322,10 @@ def numeros(n):
             display.create_line(x1+18,y3,x2+18,y3,fill=color_ope)
             display.addtag_below
             anterior="cos"
-<<<<<<< HEAD
-        else:
-            i-=1
-=======
             i+=3
         else:
             i-=1
 
->>>>>>> kevgaa
 
     elif(n=="tan"):
         if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
@@ -361,11 +346,6 @@ def numeros(n):
             display.addtag_below
             i+=3
             anterior="tan"
-<<<<<<< HEAD
-            i+=3
-        else:
-            i-=1
-=======
         else:
             i-=1
     
@@ -375,7 +355,6 @@ def numeros(n):
         else:
             return 0
 
->>>>>>> kevgaa
     #BORRAR TOD0
     if (n=="x"):
         i=0
@@ -405,16 +384,8 @@ def numeros(n):
         i=0
         d2.delete(0, END)
 
-<<<<<<< HEAD
-    #ultimo operador
-    if(n=="/"  or n=="*" or n=="-" or "+"):
-        c=n
-        
-    i+=1
-=======
     c=n    
     i+=1*grande
->>>>>>> kevgaa
     
 def colorpicker1(n):
     global color
@@ -624,17 +595,10 @@ btn14 = Button(app, text="3",height=5,width=10,bg="#818181",relief="ridge",comma
 btn15 = Button(app, text="+",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("+")).place(x=675,y=310)
 
 
-<<<<<<< HEAD
-Button(app, text="^",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("^")).place(x=420,y=405)
-Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=505,y=405)
-Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(".")).place(x=590,y=405)
-Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge").place(x=675,y=405)
-=======
 Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=420,y=405)
 Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(".")).place(x=505,y=405)
 Button(app, text="^",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("^")).place(x=590,y=405)
 Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:calcular()).place(x=675,y=405)
->>>>>>> kevgaa
 colores()
 menubar()
 #############################################################
