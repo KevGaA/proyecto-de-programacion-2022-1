@@ -1,10 +1,11 @@
 from cProfile import label
+from email import parser
 from sre_parse import State
 from tkinter import *
-import tkinter as tk
 from tkinter import font
 from tkinter import Canvas
-from turtle import color
+from turtle import clear, color, width
+from tkinter import *
 
 #aa
 i=0
@@ -376,12 +377,6 @@ def numeros(n):
         i=0
         d2.delete(0, END)
 
-
-
-
-
-    print(anterior)
-    print(grande)
     c=n    
     i+=1*grande
     
@@ -489,26 +484,64 @@ def mostrarlista(ecuacion,i=0):
 def modo(n):
     global modo_ven
     app.geometry("850x670")
-    if n==1:
-        modo_ven=1
+
+    if modo_ven%2==0:
         d2.place(x=420,y=525,width=420,height=30)
         Button(app, text="SEN",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("sen")).place(x=760,y=120)
-        m3 = Button(app, text="CIENTIFICA'NT",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:modo(2)).place(x=760,y=25)
+        m3 = Button(app, text=" ",height=5,width=10,bg="#FF980B",relief="ridge").place(x=760,y=25)
         Button(app, text="TAN",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("tan")).place(x=760,y=215)
         Button(app, text="COS",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("cos")).place(x=760,y=310) 
         Button(app, text="!",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("!")).place(x=760,y=405)
-       
-    if n==2:
+    
+    if modo_ven%2!=0:
         d2.place(x=420,y=525,width=330,height=30)
         app.geometry("757x670")
-        modo_ven=0
+    modo_ven=modo_ven+1
         
     return modo_ven
-       
+
+
+def cord(n):
+    if n==1:
+        display.place_forget()  
         
-    
+def menubar():
+    ############################################################## barra de menu
+    menubar = Menu(app)
+    app.config(menu=menubar)
 
+    filemenu = Menu(menubar)
+    editmenu = Menu(menubar)
+    helpmenu = Menu(menubar)
 
+    menubar.add_cascade(label="agrandar", menu=filemenu)
+    menubar.add_cascade(label="Ayuda", menu=helpmenu)
+
+    filemenu.add_command(label="X1",command=lambda:numeros("y"))
+    filemenu.add_command(label="X2",command=lambda:numeros("y1"))
+    filemenu.add_command(label="X4",command=lambda:numeros("y2"))
+    filemenu.add_command(label="X8",command=lambda:numeros("y3"))
+    filemenu.add_command(label="X10",command=lambda:numeros("y4"))
+
+    filemenu.add_separator()
+    filemenu.add_command(label="Salir", command=app.quit)
+
+    helpmenu.add_command(label="Ayuda")
+    helpmenu.add_separator()
+    helpmenu.add_command(label="Acerca de...")
+
+def calcular():
+    display_state= d2.get()
+    try:
+        math_expression = parser.expr(display_state).compile()
+        result = eval(math_expression)
+        d2.delete(0, END)
+        print(math_expression)
+        
+    except Exception:
+        d2.delete(0, END)
+
+#############################################################
 ###############################################################configuracion de la ventana 
 
 app = Tk()
@@ -518,33 +551,10 @@ app.configure(background="#515151")
 app.resizable (0,0)
 #############################################################
 
-############################################################## barra de menu
-menubar = Menu(app)
-app.config(menu=menubar)
 
-filemenu = Menu(menubar)
-editmenu = Menu(menubar)
-helpmenu = Menu(menubar)
-
-menubar.add_cascade(label="agrandar", menu=filemenu)
-menubar.add_cascade(label="Ayuda", menu=helpmenu)
-
-filemenu.add_command(label="X1",command=lambda:numeros("y"))
-filemenu.add_command(label="X2",command=lambda:numeros("y1"))
-filemenu.add_command(label="X4",command=lambda:numeros("y2"))
-filemenu.add_command(label="X8",command=lambda:numeros("y3"))
-filemenu.add_command(label="X10",command=lambda:numeros("y4"))
-
-filemenu.add_separator()
-filemenu.add_command(label="Salir", command=app.quit)
-
-helpmenu.add_command(label="Ayuda")
-helpmenu.add_separator()
-helpmenu.add_command(label="Acerca de...")
-#############################################################
 
 ##############################################################entrada de la calculadora
-display = Canvas(app)
+display = Canvas(app,width=375,height=550)
 display.place(x=25,y=25,width=375,height=550)
 #############################################################
 
@@ -558,7 +568,7 @@ d2.config(font=('ARIAL',10))
 
 btn0 = Button(app, text="CE",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:numeros("x")).place(x=420,y=25)
 btn1 = Button(app, text="CIENTIFICA",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:modo(1)).place(x=505,y=25)
-btn2 = Button(app, text="COORD",height=5,width=10,bg="#C2C2C2",relief="ridge").place(x=590,y=25)
+btn2 = Button(app, text="COORD",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:cord(1)).place(x=590,y=25)
 btn3 = Button(app, text="/",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("/")).place(x=675,y=25)
 
 btn4 = Button(app, text="7",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(7)).place(x=420,y=120)
@@ -581,8 +591,9 @@ btn15 = Button(app, text="+",height=5,width=10,bg="#FF980B",relief="ridge",comma
 Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=420,y=405)
 Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(".")).place(x=505,y=405)
 Button(app, text="^",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("^")).place(x=590,y=405)
-Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge").place(x=675,y=405)
+Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:calcular()).place(x=675,y=405)
 colores()
+menubar()
 #############################################################
 
 app.mainloop()
