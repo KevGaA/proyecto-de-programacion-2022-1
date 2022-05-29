@@ -755,7 +755,7 @@ numero=Label(app,text="color numeros")
 numero.place(x=400,y=410)
 colores()
 menubar()
-
+############################################################ 
 
 
 app.mainloop()
