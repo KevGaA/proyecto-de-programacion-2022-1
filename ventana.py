@@ -1,5 +1,6 @@
 from cProfile import label
 from email import parser
+from sqlite3 import Row
 from sre_parse import State
 from tkinter import *
 from tkinter import font
@@ -18,6 +19,7 @@ ecuacion = []
 anterior = " "
 grande= 1
 grandex=1
+avance=0
 
 def numeros(n):
     global i
@@ -375,6 +377,28 @@ def numeros(n):
         grande=10
         i=0
         d2.delete(0, END)
+    
+    ##AUMENTADOR DE TAMAÑO LIENZO
+    if n=="l":
+        app.geometry("550x870")
+        display.place(x=15,y=15,width=525,height=350)
+        d2.delete(0, END)
+    if n=="l1":
+        app.geometry("650x870")
+        display.place(x=15,y=15,width=625,height=350)
+        d2.delete(0, END)
+    if n=="l2":
+        app.geometry("750x870")
+        display.place(x=15,y=15,width=725,height=350)
+        d2.delete(0, END)
+    if n=="l3":
+        app.geometry("850x870")
+        display.place(x=15,y=15,width=825,height=350)
+        d2.delete(0, END)
+    if n=="l4":
+        app.geometry("950x870")
+        display.place(x=15,y=15,width=925,height=350)
+        d2.delete(0, END)
 
     c=n    
     i+=1*grande
@@ -442,37 +466,38 @@ def colorpicker0(n):
     return color_ope
 
 def colores():
-        #botones de los colores numeros
-        numeros=Label(app,text="color numeros").place(x=30,y=600)
-        btnc0 = Button(app, text="",height=1,width=5,bg="black",command=lambda:colorpicker1(0)).place(x=120,y=600)
-        btnc1 = Button(app, text="",height=1,width=5,bg="red",command=lambda:colorpicker1(1)).place(x=170,y=600)
-        btnc2 = Button(app, text="",height=1,width=5,bg="yellow",command=lambda:colorpicker1(2)).place(x=220,y=600)
-        btnc3 = Button(app, text="",height=1,width=5,bg="orange",command=lambda:colorpicker1(3)).place(x=270,y=600)
-        btnc4 = Button(app, text="",height=1,width=5,bg="pink",command=lambda:colorpicker1(4)).place(x=320,y=600)
-        btnc5 = Button(app, text="",height=1,width=5,bg="blue",command=lambda:colorpicker1(5)).place(x=370,y=600)
-        btnc6 = Button(app, text="",height=1,width=5,bg="green",command=lambda:colorpicker1(6)).place(x=420,y=600)
-        btnc7 = Button(app, text="",height=1,width=5,bg="cyan",command=lambda:colorpicker1(7)).place(x=470,y=600)
-        btnc8 = Button(app, text="",height=1,width=5,bg="purple",command=lambda:colorpicker1(8)).place(x=520,y=600)
-        btnc9 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpicker1(9)).place(x=570,y=600)
-        btnc10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker1(10)).place(x=620,y=600)
-        btnc11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker1(11)).place(x=670,y=600)
-        btnc12 = Button(app, text="",height=1,width=4,bg="lime",command=lambda:colorpicker1(12)).place(x=720,y=600)
+        global avance
+        
+        c00.place(x=375,y=440)
+        c01.place(x=425,y=440)
+        c02.place(x=475,y=440)
+        c03.place(x=375,y=470)
+        c04.place(x=425,y=470)
+        c05.place(x=475,y=470)
+        c06.place(x=375,y=500)
+        c07.place(x=425,y=500)
+        c08.place(x=475,y=500)
+        c09.place(x=375,y=530)
+        c010.place(x=425,y=530)
+        c011.place(x=475,y=530)
 
-        operadores=Label(app,text="color operadores").place(x=25,y=630)
+
         #botones de los colores operadores
-        btnc0 = Button(app, text="",height=1,width=5,bg="black",command=lambda:colorpicker0(0)).place(x=120,y=630)
-        btnc1 = Button(app, text="",height=1,width=5,bg="red",command=lambda:colorpicker0(1)).place(x=170,y=630)
-        btnc2 = Button(app, text="",height=1,width=5,bg="yellow",command=lambda:colorpicker0(2)).place(x=220,y=630)
-        btnc3 = Button(app, text="",height=1,width=5,bg="orange",command=lambda:colorpicker0(3)).place(x=270,y=630)
-        btnc4 = Button(app, text="",height=1,width=5,bg="pink",command=lambda:colorpicker0(4)).place(x=320,y=630)
-        btnc5 = Button(app, text="",height=1,width=5,bg="blue",command=lambda:colorpicker0(5)).place(x=370,y=630)
-        btnc6 = Button(app, text="",height=1,width=5,bg="green",command=lambda:colorpicker0(6)).place(x=420,y=630)
-        btnc7 = Button(app, text="",height=1,width=5,bg="cyan",command=lambda:colorpicker0(7)).place(x=470,y=630)
-        btnc8 = Button(app, text="",height=1,width=5,bg="purple",command=lambda:colorpicker0(8)).place(x=520,y=630)
-        btnc9 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpicker0(9)).place(x=570,y=630)
-        btnc10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker0(10)).place(x=620,y=630)
-        btnc11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker0(11)).place(x=670,y=630)
-        btnc12 = Button(app, text="",height=1,width=4,bg="lime",command=lambda:colorpicker0(12)).place(x=720,y=630)
+    
+
+        c0.place(x=375,y=630)
+        c1.place(x=425,y=630)
+        c2.place(x=475,y=630)
+        c3.place(x=375,y=660)
+        c4.place(x=425,y=660)
+        c5.place(x=475,y=660)
+        c6.place(x=375,y=690)
+        c7.place(x=425,y=690)
+        c8.place(x=475,y=690)
+        c9.place(x=375,y=720)
+        c10.place(x=425,y=720)
+        c11.place(x=475,y=720)
+
         
 
 def mostrarlista(ecuacion,i=0):
@@ -480,23 +505,91 @@ def mostrarlista(ecuacion,i=0):
         print(ecuacion[i])
         mostrarlista(ecuacion,i+1)
 
-def modo(n):
+def modo():
     global modo_ven
-    app.geometry("850x670")
 
     if modo_ven%2==0:
-        d2.place(x=420,y=525,width=420,height=30)
-        Button(app, text="SEN",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("sen")).place(x=760,y=120)
-        m3 = Button(app, text=" ",height=5,width=10,bg="#FF980B",relief="ridge").place(x=760,y=25)
-        Button(app, text="TAN",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("tan")).place(x=760,y=215)
-        Button(app, text="COS",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("cos")).place(x=760,y=310) 
-        Button(app, text="!",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("!")).place(x=760,y=405)
-    
-    if modo_ven%2!=0:
-        d2.place(x=420,y=525,width=330,height=30)
-        app.geometry("757x670")
-    modo_ven=modo_ven+1
+        app.geometry("615x870")
+        display.place(x=15,y=15,width=595,height=350)
+        d2.place(x=15,y=375,width=595,height=30)
+        m1.place(x=355,y=410)
+        m2.place(x=355,y=500)        
+        m3.place(x=355,y=590)       
+        m4.place(x=355,y=680)       
+        m5.place(x=355,y=770)
+
+        numero.place(x=480,y=410)
+
+
+        c00.place(x=375+80,y=440)
+        c01.place(x=425+80,y=440)
+        c02.place(x=475+80,y=440)
+        c03.place(x=375+80,y=470)
+        c04.place(x=425+80,y=470)
+        c05.place(x=475+80,y=470)
+        c06.place(x=375+80,y=500)
+        c07.place(x=425+80,y=500)
+        c08.place(x=475+80,y=500)
+        c09.place(x=375+80,y=530)
+        c010.place(x=425+80,y=530)
+        c011.place(x=475+80,y=530)
+    	
+        operadores.place(x=480,y=600)
+        c0.place(x=375+80,y=630)
+        c1.place(x=425+80,y=630)
+        c2.place(x=475+80,y=630)
+        c3.place(x=375+80,y=660)
+        c4.place(x=425+80,y=660)
+        c5.place(x=475+80,y=660)
+        c6.place(x=375+80,y=690)
+        c7.place(x=425+80,y=690)
+        c8.place(x=475+80,y=690)
+        c9.place(x=375+80,y=720)
+        c10.place(x=425+80,y=720)
+        c11.place(x=475+80,y=720)
+
         
+    if modo_ven%2!=0:
+        app.geometry("550x870")
+        display.place(x=15,y=15,width=525,height=350)
+        d2.place(x=15,y=375,width=525,height=30)
+        m1.place_forget()
+        m2.place_forget()
+        m3.place_forget()
+        m4.place_forget()
+        m5.place_forget()
+
+        numero.place(x=400,y=410)
+        c00.place(x=375,y=440)
+        c01.place(x=425,y=440)
+        c02.place(x=475,y=440)
+        c03.place(x=375,y=470)
+        c04.place(x=425,y=470)
+        c05.place(x=475,y=470)
+        c06.place(x=375,y=500)
+        c07.place(x=425,y=500)
+        c08.place(x=475,y=500)
+        c09.place(x=375,y=530)
+        c010.place(x=425,y=530)
+        c011.place(x=475,y=530)
+
+        operadores.place(x=400,y=600)
+        c0.place(x=375,y=630)
+        c1.place(x=425,y=630)
+        c2.place(x=475,y=630)
+        c3.place(x=375,y=660)
+        c4.place(x=425,y=660)
+        c5.place(x=475,y=660)
+        c6.place(x=375,y=690)
+        c7.place(x=425,y=690)
+        c8.place(x=475,y=690)
+        c9.place(x=375,y=720)
+        c10.place(x=425,y=720)
+        c11.place(x=475,y=720)
+
+        
+       
+    modo_ven=modo_ven+1
     return modo_ven
 
 
@@ -514,6 +607,7 @@ def menubar():
     helpmenu = Menu(menubar)
 
     menubar.add_cascade(label="agrandar", menu=filemenu)
+    menubar.add_cascade(label="lienzo",menu=editmenu)
     menubar.add_cascade(label="Ayuda", menu=helpmenu)
 
     filemenu.add_command(label="X1",command=lambda:numeros("y"))
@@ -528,6 +622,13 @@ def menubar():
     helpmenu.add_command(label="Ayuda")
     helpmenu.add_separator()
     helpmenu.add_command(label="Acerca de...")
+
+    editmenu.add_command(label="X1",command=lambda:numeros("l"))
+    editmenu.add_command(label="X2",command=lambda:numeros("l1"))
+    editmenu.add_command(label="X4",command=lambda:numeros("l2"))
+    editmenu.add_command(label="X8",command=lambda:numeros("l3"))
+    editmenu.add_command(label="X10",command=lambda:numeros("l4"))
+
 
 def calcular():
     display_state= d2.get()
@@ -545,54 +646,116 @@ def calcular():
 
 app = Tk()
 app.title("Graficador de expresiones matematicas")
-app.geometry("757x670") ##dimensiones de la ventanan principal ANCHOXALTO
+app.geometry("550x870") ##dimensiones de la ventanan principal ANCHOXALTO
 app.configure(background="#515151")
 app.resizable (0,0)
 #############################################################
 
-
-
 ##############################################################entrada de la calculadora
-display = Canvas(app,width=375,height=550)
-display.place(x=25,y=25,width=375,height=550)
+display = Canvas(app)
+display.place(x=15,y=15,width=525,height=350)
 #############################################################
 
 ##############################################################entrada de teclado
 d2 = Entry(app)
-d2.place(x=420,y=525,width=330,height=30)
+d2.place(x=15,y=375,width=525,height=30)
 d2.config(font=('ARIAL',10))
 
 ##############################################################botones de los numeros 
 
 
-btn0 = Button(app, text="CE",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:numeros("x")).place(x=420,y=25)
-btn1 = Button(app, text="CIENTIFICA",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:modo(1)).place(x=505,y=25)
-btn2 = Button(app, text="COORD",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:cord(1)).place(x=590,y=25)
-btn3 = Button(app, text="/",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("/")).place(x=675,y=25)
+btn0 = Button(app, text="CE",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:numeros("x"))
+btn0.place(x=15,y=410)
 
-btn4 = Button(app, text="7",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(7)).place(x=420,y=120)
-btn5 = Button(app, text="8",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(8)).place(x=505,y=120)
-btn6 = Button(app, text="9",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(9)).place(x=590,y=120)
-btn7 = Button(app, text="X",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("*")).place(x=675,y=120)
+btn1 = Button(app, text="CIENTIFICA",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:modo())
+btn1.place(x=100,y=410)
 
+btn2 = Button(app, text="COORD",height=5,width=10,bg="#C2C2C2",relief="ridge",command=lambda:cord(1))
+btn2.place(x=185,y=410)
 
-btn8 = Button(app, text="4",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(4)).place(x=420,y=215)
-btn9 = Button(app, text="5",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(5)).place(x=505,y=215)
-btn10 = Button(app, text="6",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(6)).place(x=590,y=215)
-btn11 = Button(app, text="-",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("-")).place(x=675,y=215)
+btn3 = Button(app, text="/",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("/"))
+btn3.place(x=270,y=410)
 
-btn12 = Button(app, text="1",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(1)).place(x=420,y=310)
-btn13 = Button(app, text="2",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(2)).place(x=505,y=310)
-btn14 = Button(app, text="3",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(3)).place(x=590,y=310)
-btn15 = Button(app, text="+",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("+")).place(x=675,y=310)
+btn4 = Button(app, text="7",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(7))
+btn4.place(x=15,y=500)
 
+btn5 = Button(app, text="8",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(8))
+btn5.place(x=100,y=500)
 
-Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0)).place(x=420,y=405)
-Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(".")).place(x=505,y=405)
-Button(app, text="^",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("^")).place(x=590,y=405)
-Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:calcular()).place(x=675,y=405)
+btn6 = Button(app, text="9",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(9))
+btn6.place(x=185,y=500)
+
+btn7 = Button(app, text="X",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("*"))
+btn7.place(x=270,y=500)
+
+btn8 = Button(app, text="4",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(4))
+btn8.place(x=15,y=590)
+btn9 = Button(app, text="5",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(5))
+btn9.place(x=100,y=590)
+btn10 = Button(app, text="6",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(6))
+btn10.place(x=185,y=590)
+btn11 = Button(app, text="-",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("-"))
+btn11.place(x=270,y=590)
+
+btn12 = Button(app, text="1",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(1))
+btn12.place(x=15,y=680)
+btn13 = Button(app, text="2",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(2))
+btn13.place(x=100,y=680)
+btn14 = Button(app, text="3",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(3))
+btn14.place(x=185,y=680)
+btn15 = Button(app, text="+",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("+"))
+btn15.place(x=270,y=680)
+
+btn16=Button(app, text="0",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros(0))
+btn16.place(x=15,y=770)
+btn17=Button(app, text=".",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("."))
+btn17.place(x=100,y=770)
+btn18=Button(app, text="^",height=5,width=10,bg="#818181",relief="ridge",command=lambda:numeros("^"))
+btn18.place(x=185,y=770)
+btn19=Button(app, text="=",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:calcular())
+btn19.place(x=270,y=770)
+
+############################################################# MODO CIENTIFICO
+m1=Button(app, text="SEN",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("sen"))
+m2=Button(app, text=" ",height=5,width=10,bg="#FF980B",relief="ridge")
+m3=Button(app, text="TAN",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("tan"))
+m4=Button(app, text="COS",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("cos"))
+m5=Button(app, text="!",height=5,width=10,bg="#FF980B",relief="ridge",command=lambda:numeros("!"))
+
+############################################################# colores
+c0 = Button(app, text="",height=1,width=5,bg="black",command=lambda:colorpicker0(0))
+c1 = Button(app, text="",height=1,width=5,bg="red",command=lambda:colorpicker0(1))
+c2 = Button(app, text="",height=1,width=5,bg="yellow",command=lambda:colorpicker0(2))
+c3 = Button(app, text="",height=1,width=5,bg="orange",command=lambda:colorpicker0(3))
+c4 = Button(app, text="",height=1,width=5,bg="pink",command=lambda:colorpicker0(4))
+c5 = Button(app, text="",height=1,width=5,bg="blue",command=lambda:colorpicker0(5))
+c6 = Button(app, text="",height=1,width=5,bg="green",command=lambda:colorpicker0(6))
+c7 = Button(app, text="",height=1,width=5,bg="cyan",command=lambda:colorpicker0(7))
+c8 = Button(app, text="",height=1,width=5,bg="purple",command=lambda:colorpicker0(8))
+c9 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpicker0(9))
+c10 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker0(10))
+c11 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker0(11))
+operadores=Label(app,text="color operadores")
+operadores.place(x=400,y=600)
+
+#botones de los colores numeros
+c00 = Button(app, text="",height=1,width=5,bg="black",command=lambda:colorpicker1(0))
+c01 = Button(app, text="",height=1,width=5,bg="red",command=lambda:colorpicker1(1))
+c02 = Button(app, text="",height=1,width=5,bg="yellow",command=lambda:colorpicker1(2))
+c03 = Button(app, text="",height=1,width=5,bg="orange",command=lambda:colorpicker1(3))
+c04 = Button(app, text="",height=1,width=5,bg="pink",command=lambda:colorpicker1(4))
+c05 = Button(app, text="",height=1,width=5,bg="blue",command=lambda:colorpicker1(5))
+c06 = Button(app, text="",height=1,width=5,bg="green",command=lambda:colorpicker1(6))
+c07 = Button(app, text="",height=1,width=5,bg="cyan",command=lambda:colorpicker1(7))
+c08 = Button(app, text="",height=1,width=5,bg="purple",command=lambda:colorpicker1(8))
+c09 = Button(app, text="",height=1,width=5,bg="brown",command=lambda:colorpicker1(9))
+c010 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker1(10))
+c011 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker1(11))
+numero=Label(app,text="color numeros")
+numero.place(x=400,y=410)
 colores()
 menubar()
-#############################################################
+
+
 
 app.mainloop()
