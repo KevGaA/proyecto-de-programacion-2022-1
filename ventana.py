@@ -753,6 +753,7 @@ c010 = Button(app, text="",height=1,width=5,bg="grey",command=lambda:colorpicker
 c011 = Button(app, text="",height=1,width=5,bg="teal",command=lambda:colorpicker1(11))
 numero=Label(app,text="color numeros")
 numero.place(x=400,y=410)
+############################################################ 
 colores()
 menubar()
 ############################################################ 
