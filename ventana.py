@@ -277,7 +277,7 @@ def numeros(n):
             i-=1
     
     elif(n=="sen"): 
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
+        if anterior != "^" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
             #s de sen
             display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope) 
             display.create_line(x1,y1+5,x1,y2+3,fill=color_ope)
@@ -301,7 +301,7 @@ def numeros(n):
             i-=1
 
     elif(n=="cos"):
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
+        if anterior != "^" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
             #c de cos
             display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope)
             display.create_line(x1,y1+5,x1,y2+10,fill=color_ope)
@@ -322,7 +322,7 @@ def numeros(n):
 
 
     elif(n=="tan"):
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
+        if anterior != "^" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
 
             #t de tan
             display.create_line(x1,y1+5,x2+4,y1+5,fill=color_ope)
