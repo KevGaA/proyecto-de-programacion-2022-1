@@ -361,22 +361,27 @@ def numeros(n):
         grande=1
         i=0
         d2.delete(0, END)
+        display.delete("all")
     if n=="y1":
         grande=2
         i=0
         d2.delete(0, END)
+        display.delete("all")
     if n=="y2":
         grande=4
         i=0
         d2.delete(0, END)
+        display.delete("all")
     if n=="y3":
+        grande=6
+        i=0
+        d2.delete(0, END)
+        display.delete("all")
+    if n=="y4":
         grande=8
         i=0
         d2.delete(0, END)
-    if n=="y4":
-        grande=10
-        i=0
-        d2.delete(0, END)
+        display.delete("all")
     
     ##AUMENTADOR DE TAMAÑO LIENZO
     if n=="l":
