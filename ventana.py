@@ -45,6 +45,12 @@ def numeros(n):
     y22=10*grande
     y33=15*grande
     
+    if(c=="^"):
+        x1=x+1
+        x2=x+5
+        y1=5
+        y2=10
+        y3=15
     if(c=="/"):
         i-=1
         x1=x-15
@@ -54,6 +60,7 @@ def numeros(n):
         y3=70
         ecuacion.append("/")
         display.addtag_below
+    
     
     if (n==0):
         if anterior=="^":
@@ -277,7 +284,7 @@ def numeros(n):
             i-=1
     
     elif(n=="sen"): 
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
+        if anterior != "^" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
             #s de sen
             display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope) 
             display.create_line(x1,y1+5,x1,y2+3,fill=color_ope)
@@ -301,7 +308,7 @@ def numeros(n):
             i-=1
 
     elif(n=="cos"):
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
+        if anterior != "^" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
             #c de cos
             display.create_line(x1,y1+5,x2+2,y1+5,fill=color_ope)
             display.create_line(x1,y1+5,x1,y2+10,fill=color_ope)
@@ -322,7 +329,7 @@ def numeros(n):
 
 
     elif(n=="tan"):
-        if anterior != "+" and anterior != "^" and anterior != "*" and anterior != "-" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
+        if anterior != "^" and anterior != "!" and anterior != "sen" and anterior != "cos" and anterior != "tan":
 
             #t de tan
             display.create_line(x1,y1+5,x2+4,y1+5,fill=color_ope)
@@ -755,7 +762,7 @@ numero=Label(app,text="color numeros")
 numero.place(x=400,y=410)
 colores()
 menubar()
-
+############################################################ 
 
 
 app.mainloop()
